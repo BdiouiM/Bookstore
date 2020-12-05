@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.image.*?>
+<?import javafx.scene.effect.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #ADD8E6;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="bookstore.fx.ModeController">
+   <children>
+      <Button layoutX="203.0" layoutY="39.0" mnemonicParsing="false" onAction="#IUadmin" prefHeight="107.0" prefWidth="163.0" style="-fx-background-color: #FFA500;" text="Admin" textFill="WHITE" />
+      <Button layoutX="339.0" layoutY="200.0" mnemonicParsing="false" onAction="#IUclient" prefHeight="107.0" prefWidth="169.0" style="-fx-background-color: #FFA500;" text="Client" textFill="WHITE" />
+      <Button layoutX="56.0" layoutY="200.0" mnemonicParsing="false" onAction="#IUBibliothecaire" prefHeight="107.0" prefWidth="163.0" style="-fx-background-color: #FFA500;" text="Bibliothécaire" textFill="WHITE" />
+   </children>
+</AnchorPane>

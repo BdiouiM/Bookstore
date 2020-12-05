@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import javafx.scene.image.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<StackPane fx:id="parent" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="bookstore.fx.MesReclamationClientController">
+   <children>
+      <AnchorPane fx:id="anchor" prefHeight="200.0" prefWidth="200.0">
+         <children>
+            <HBox prefHeight="400.0" prefWidth="600.0">
+               <children>
+                  <VBox alignment="CENTER" prefHeight="400.0" prefWidth="164.0">
+                     <children>
+                        <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../images/clientLogo.png" />
+                           </image>
+                        </ImageView>
+                        <Label fx:id="username" text="Username" textFill="ORANGE">
+                           <font>
+                              <Font name="Comic Sans MS Bold" size="27.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </VBox>
+                  <VBox prefHeight="400.0" prefWidth="438.0" style="-fx-background-color: #ADD8E6;">
+                     <children>
+                        <HBox alignment="CENTER" prefHeight="70.0" prefWidth="437.0">
+                           <children>
+                              <Label text="Mes Reclamations" textFill="WHITE">
+                                 <font>
+                                    <Font name="Tahoma Bold" size="39.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </HBox>
+                        <HBox alignment="CENTER" prefHeight="300.0" prefWidth="200.0">
+                           <children>
+                              <TableView prefHeight="276.0" prefWidth="386.0" stylesheets="@../css/TableView.css">
+                                <columns>
+                                  <TableColumn fx:id="Identifiant" prefWidth="75.0" text="Identifiant" />
+                                  <TableColumn fx:id="Date" prefWidth="75.0" text="Date" />
+                                    <TableColumn fx:id="Type" prefWidth="75.0" text="Type" />
+                                    <TableColumn fx:id="Statut" prefWidth="75.0" text="Statut" />
+                                    <TableColumn fx:id="Description" prefWidth="75.0" text="Description" />
+                                </columns>
+                              </TableView>
+                           </children>
+                        </HBox>
+                        <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
+                           <children>
+                              <Button fx:id="back" mnemonicParsing="false" onAction="#back" styleClass="btn-menu" stylesheets="@../css/MenuButton.css" text="Back" />
+                           </children>
+                        </HBox>
+                     </children>
+                  </VBox>
+               </children>
+            </HBox>
+         </children>
+      </AnchorPane>
+   </children>
+</StackPane>
