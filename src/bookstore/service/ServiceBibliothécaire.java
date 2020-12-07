@@ -194,9 +194,9 @@ public class ServiceBibliothécaire implements VerifierStockInterface{
     
        @Override
        public void passerCommandeLivre(Livre l)throws Exception {
-           final String username = "mohamedbedioui10";
-           final String password = "Mohamedbdioui100";
-
+           final String username = "bibliothecaire";
+           final String password = "Bookstore04*-";
+           String adminMail=getRecepient();
         Properties prop = new Properties();
         prop.put("mail.smtp.host", "smtp.gmail.com");
         prop.put("mail.smtp.port", "587");
@@ -214,10 +214,10 @@ public class ServiceBibliothécaire implements VerifierStockInterface{
         try {
 
             Message message = new MimeMessage(session);
-            message.setFrom(new InternetAddress("mohamedbedioui10@gmail.com"));
+            message.setFrom(new InternetAddress("bibliothecaire@gmail.com"));
             message.setRecipients(
                     Message.RecipientType.TO,
-                    InternetAddress.parse("bibliothecaire@gmail.com")
+                    InternetAddress.parse(adminMail)
             );
             message.setSubject("Alimentation de "+l.getTitre());
             message.setText("Vous devez alimenter le livre '"+l.getTitre()+"'");
