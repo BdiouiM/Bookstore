@@ -96,19 +96,7 @@ public class EnvoyerReclamationController {
     @FXML
     private void MesReclamation(ActionEvent event) {
         try {
-             /*FXMLLoader loader=new FXMLLoader(getClass().getResource("MesReclamationClient.fxml"));
-             
-             Parent root=(Parent) loader.load();  
-             Scene scene = mesRec.getScene();
-             root.translateYProperty().set(scene.getHeight());
-             
-             anchorPane.getChildren().add(root);
-             
-             Timeline t = new Timeline();
-            KeyValue kv= new KeyValue(root.translateYProperty(),0,Interpolator.EASE_IN);
-            KeyFrame kf = new KeyFrame(Duration.seconds(1), kv);
-            t.getKeyFrames().add(kf);
-            t.play();*/
+            
             FXMLLoader loader=new FXMLLoader(getClass().getResource("MesReclamationClient.fxml"));
              
              Parent root1=(Parent) loader.load();

@@ -33,13 +33,16 @@
                         <Image url="@../images/booklogo.png" />
                      </image>
                      <HBox.margin>
-                        <Insets left="120.0" />
+                        <Insets left="120.0" top="40.0" />
                      </HBox.margin>
                   </ImageView>
                   <Label text="Sign In" textFill="WHITE">
                      <font>
                         <Font name="Comic Sans MS Bold" size="49.0" />
-                     </font></Label>
+                     </font>
+                     <HBox.margin>
+                        <Insets top="40.0" />
+                     </HBox.margin></Label>
                </children>
             </HBox>
             <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0">

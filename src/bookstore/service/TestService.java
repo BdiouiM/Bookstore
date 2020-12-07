@@ -15,14 +15,14 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 
 public class TestService {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws Exception {
         
       
           
             
             
             //********  Client ********* //
-            Client c1 = new Client(1, 00000000, "Mohamed", "Bdioui", "zahra", "mohamed@esprit.tn", "Bdioui","", "", 22723458);
+            /*Client c1 = new Client(1, 00000000, "Mohamed", "Bdioui", "zahra", "mohamed@esprit.tn", "Bdioui","", "", 22723458);
             Reclamation r1 = new Reclamation("Test1", "Test1", "Test1", "Test1", "Test1");
             Reclamation r2 = new Reclamation("Test2", "Test2", "Test2", "Test2", "Test2");
             ServiceClient sc = new ServiceClient();
@@ -96,9 +96,10 @@ public class TestService {
             */
             
 //********  Bibliothécaire ********* //
-          /*  Livre livre1 = new Livre("", "", 200, 1.2f,"");
-            ServiceBibliothécaire sb = new ServiceBibliothécaire();
-            //  Existe   Livre //
+          Livre livre1 = new Livre("", "", 200, 1.2f,"");
+             ServiceBibliothécaire sb = new ServiceBibliothécaire();
+             sb.passerCommandeLivre(livre1);
+            /* //  Existe   Livre //
             System.out.println("*******Existe livre *********");
             System.out.println(sb.existeLivre(livre1));
             //  Quantite   Livre //

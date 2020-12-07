@@ -16,16 +16,22 @@ import java.sql.ResultSet;
 import java.sql.Statement;
 import java.util.ResourceBundle;
 import java.util.concurrent.ExecutionException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import javafx.collections.transformation.FilteredList;
+import javafx.collections.transformation.SortedList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TableCell;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
+import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.text.Text;
 import javafx.util.Callback;
@@ -57,6 +63,8 @@ public class VerifierStockController implements Initializable {
     private Text nbrL1;
     @FXML
     private Label username;
+    @FXML
+    private TextField chercher;
     /**
      * Initializes the controller class.
      */
@@ -64,7 +72,31 @@ public class VerifierStockController implements Initializable {
     public void initialize(URL url, ResourceBundle rb) {
           InitColumn();
           livres=loadData(livres);
-          tableL.setItems(livres);
+          //Observable in FilteredList
+           FilteredList<Livre> filteredList= new FilteredList<Livre>(livres,b->true);
+           //Set Filter predicate
+           chercher.textProperty().addListener((livres,oldValue,newValue)->{
+                filteredList.setPredicate((Livre livre) -> {
+                    //si textField est vide afficher all
+                    if (newValue==null||newValue.isEmpty())
+                        return true;
+                    //comparer username to textField
+                    String lowerCase = newValue.toLowerCase();
+                    
+                    if(livre.getTitre().toLowerCase().indexOf(lowerCase)!= -1)
+                        return true; //filter match usernameClient
+                    else {
+                        return false;}//doesn't match
+                });
+                  
+            });
+           //Filtered List in Sorted List
+           SortedList<Livre> sortedList= new SortedList<>(filteredList);
+           sortedList.comparatorProperty().bind(tableL.comparatorProperty());
+           //ajouter items dans le tableau
+           tableL.setItems(sortedList);
+          
+          
           ServiceBibliothécaire sb = new ServiceBibliothécaire();
            int nombre =sb.QuantiteLivres();
           nbrL.setText(String.valueOf(nombre));
@@ -99,10 +131,6 @@ public class VerifierStockController implements Initializable {
                    l.setPrix(rs.getFloat("Prix"));
                    l.setIdentifiant(rs.getInt("Identifiant"));
                    
-                  /* Button annulerB= new Button("annuler"); 
-                   r.setAnnuler(annulerB);
-                   Button validerB= new Button("valider");
-                   r.setValider(validerB);*/
                 
                    livres.add(l);
                }
@@ -120,7 +148,18 @@ public class VerifierStockController implements Initializable {
             public TableCell<Livre, Void> call(final TableColumn<Livre, Void> param) {
                 final TableCell<Livre, Void> cell = new TableCell<Livre, Void>() {
 
+                    String cssButton="-fx-cursor:  hand;\n" +
+                    "    -fx-border-color: #ffa500;\n" +
+                    "    -fx-border-width: 3px;\n" +
+                    "    -fx-border-radius: 20px;\n" +
+                    "    -fx-background-color:  #FFF;\n" +
+                    "    -fx-text-fill:#ffa500;\n" +
+                    "    -fx-font-veigth:bold ;"
+                            + "";
                     private final Button btn = new Button("Quantite");
+                    {
+                        this.btn.setStyle(cssButton);
+                    }
 
                     {
                         
@@ -175,4 +214,36 @@ public class VerifierStockController implements Initializable {
         }
                  return quantity;
 }
+  public void alertAlimentation(ActionEvent event)
+    {
+        Alert a = new Alert(Alert.AlertType.INFORMATION);
+        a.setTitle("Alimentation");
+         a.setHeaderText("Alimenter le bookstore");
+          a.setContentText("Vous devez chercher un livre");
+          a.showAndWait();
+    }
+    
+
+    @FXML
+    private void Alimenter(ActionEvent event) {
+         if(chercher.getText().equals(""))
+        {
+            alertAlimentation(event);
+        }
+        else
+        {
+            try {
+                String titre= chercher.getText();
+                Livre l = new Livre();
+                l.setTitre(titre);
+                ServiceBibliothécaire sb = new ServiceBibliothécaire();
+                sb.passerCommandeLivre(l);
+                System.out.println("mail envoyé");
+            } catch (Exception ex) {
+                System.err.println("erreur dans Alimenter: "+ex);
+                ex.printStackTrace();
+            }
+        
+        }
+    }
 }

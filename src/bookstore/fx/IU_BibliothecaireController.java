@@ -46,7 +46,7 @@ public class IU_BibliothecaireController implements Initializable {
              VerifierStockController vs = loader.getController();
              vs.setUser(user);
             } catch(Exception e) {
-            System.err.println("erreur dans stock biblio");
+            System.err.println("erreur dans stock biblio" + e);
             }
     }
 

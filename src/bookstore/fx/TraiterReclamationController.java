@@ -10,19 +10,26 @@ import java.sql.ResultSet;
 import java.sql.Statement;
 import java.util.ResourceBundle;
 import java.util.function.Consumer;
+import java.util.function.Predicate;
+import javafx.beans.binding.Bindings;
+import javafx.beans.value.ObservableStringValue;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import javafx.collections.transformation.FilteredList;
+import javafx.collections.transformation.SortedList;
 import javafx.event.ActionEvent;
 import javafx.event.Event;
 import javafx.event.EventHandler;
 import javafx.event.EventType;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TableCell;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
+import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.text.Text;
 import javafx.util.Callback;
@@ -55,6 +62,8 @@ public class TraiterReclamationController implements Initializable {
     private Text nbrR;
     @FXML
     private Label user;
+    @FXML
+    private TextField chercher;
     
     @Override
     public void initialize(URL url, ResourceBundle rb) {
@@ -64,14 +73,35 @@ public class TraiterReclamationController implements Initializable {
            addAnnulerToTableView();
            //ajouter buton valider
            addValiderToTableView();
-          //ajouter items dans le tableau
-           tableR.setItems(reclamations);
+          
            //nombre reclamations
            ServiceAdmin sa = new ServiceAdmin();
            int nombre =sa.NombreReclamations();
            nbrR.setText(String.valueOf(nombre));
            System.out.println(nbrR);
-           
+           //Observable in FilteredList
+           FilteredList<Reclamation> filteredList= new FilteredList<Reclamation>(reclamations,b->true);
+           //Set Filter predicate
+           chercher.textProperty().addListener((reclamations,oldValue,newValue)->{
+                filteredList.setPredicate((Reclamation reclamation) -> {
+                    //si textField est vide afficher all
+                    if (newValue==null||newValue.isEmpty())
+                        return true;
+                    //comparer username to textField
+                    String lowerCase = newValue.toLowerCase();
+                    if(reclamation.getClientUsername().toLowerCase().indexOf(lowerCase)!= -1)
+                        return true; //filter match usernameClient
+                    else {
+                        return false;}//doesn't match
+                });
+                  
+            });
+           //Filtered List in Sorted List
+           SortedList<Reclamation> sortedList= new SortedList<>(filteredList);
+           sortedList.comparatorProperty().bind(tableR.comparatorProperty());
+           //ajouter items dans le tableau
+           tableR.setItems(sortedList);
+          
            
     }   
     
@@ -104,11 +134,6 @@ public class TraiterReclamationController implements Initializable {
                    r.setDescription(rs.getString("Description"));
                    r.setIdentifiant(rs.getInt("Identifiant"));
                    
-                  /* Button annulerB= new Button("annuler"); 
-                   r.setAnnuler(annulerB);
-                   Button validerB= new Button("valider");
-                   r.setValider(validerB);*/
-                
                    reclamations.add(r);
                }
            }
@@ -125,15 +150,22 @@ public class TraiterReclamationController implements Initializable {
             public TableCell<Reclamation, Void> call(final TableColumn<Reclamation, Void> param) {
                 final TableCell<Reclamation, Void> cell = new TableCell<Reclamation, Void>() {
 
-                    private final Button btn = new Button("annuler");
-
+                    String cssButton="-fx-cursor:  hand;\n" +
+                    "    -fx-border-color: #ffa500;\n" +
+                    "    -fx-border-width: 3px;\n" +
+                    "    -fx-border-radius: 20px;\n" +
+                    "    -fx-background-color:  #FFF;\n" +
+                    "    -fx-text-fill:#ffa500;\n" +
+                    "    -fx-font-veigth:bold ;"
+                            + "";
+                   private final    Button btn = new Button("Annuler");
                     {
                         
                         
                         btn.setOnAction((ActionEvent event) -> {
-                            String cu = getTableView().getItems().get(getIndex()).getClientUsername();
+                             String cu = getTableView().getItems().get(getIndex()).getClientUsername();
                              String d = getTableView().getItems().get(getIndex()).getDateReclamation();
-                              String t = getTableView().getItems().get(getIndex()).getType();
+                             String t = getTableView().getItems().get(getIndex()).getType();
                                int i = getTableView().getItems().get(getIndex()).getIdentifiant();
                             Reclamation r = new Reclamation();
                             System.out.println("selected Reclamation : " + i);
@@ -144,7 +176,10 @@ public class TraiterReclamationController implements Initializable {
                             annulerButton(r);
                         });
                     }
-
+                    {
+                        this.btn.setStyle(cssButton);
+                    }
+                   
                     @Override
                     public void updateItem(Void item, boolean empty) {
                         super.updateItem(item, empty);
@@ -185,8 +220,17 @@ public class TraiterReclamationController implements Initializable {
             @Override
             public TableCell<Reclamation, Void> call(final TableColumn<Reclamation, Void> param) {
                 final TableCell<Reclamation, Void> cell = new TableCell<Reclamation, Void>() {
+                    
+                    String cssButton="-fx-cursor:  hand;\n" +
+                    "    -fx-border-color: #ffa500;\n" +
+                    "    -fx-border-width: 3px;\n" +
+                    "    -fx-border-radius: 20px;\n" +
+                    "    -fx-background-color:  #FFF;\n" +
+                    "    -fx-text-fill:#ffa500;\n" +
+                    "    -fx-font-veigth:bold ;"
+                            + "";
 
-                    private final Button btn = new Button("valider");
+                  private final Button btn = new Button("valider");
 
                     {
                         
@@ -205,7 +249,9 @@ public class TraiterReclamationController implements Initializable {
                             validerButton(r);
                         });
                     }
-
+                    {
+                        this.btn.setStyle(cssButton);
+                    }
                     @Override
                     public void updateItem(Void item, boolean empty) {
                         super.updateItem(item, empty);
@@ -231,8 +277,14 @@ public class TraiterReclamationController implements Initializable {
             sa.validerReclamations(r);
         } catch (ReclamationExisteException ex) {
             System.err.println("erreur dans la validation");      
-        }
-            
-        
+        }  
+    }
+      public void alertUsername(ActionEvent event,String username)
+    {
+        Alert a = new Alert(Alert.AlertType.ERROR);
+        a.setTitle("Reclamation");
+         a.setHeaderText("Reclamation n'existe pas");
+          a.setContentText(username+"  n'a pas envoyé une réclamation");
+          a.showAndWait();
     }
 }

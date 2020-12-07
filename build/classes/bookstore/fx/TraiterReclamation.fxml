@@ -40,6 +40,19 @@
                   </HBox>
                   <HBox alignment="CENTER_LEFT" prefHeight="60.0" prefWidth="200.0">
                      <children>
+                        <Label text="Chercher" textFill="ORANGE">
+                           <font>
+                              <Font name="Comic Sans MS Bold" size="27.0" />
+                           </font>
+                           <HBox.margin>
+                              <Insets left="20.0" />
+                           </HBox.margin>
+                        </Label>
+                        <TextField fx:id="chercher" promptText="Username de client" styleClass="text-field" stylesheets="@../css/TextField.css">
+                           <HBox.margin>
+                              <Insets left="10.0" />
+                           </HBox.margin>
+                        </TextField>
                         <Text fill="WHITE" fontSmoothingType="LCD" smooth="false" strokeType="OUTSIDE" strokeWidth="0.0" text="Nombre réclamations :">
                            <font>
                               <Font name="Comic Sans MS Bold" size="27.0" />
@@ -63,7 +76,7 @@
                   </HBox>
                   <HBox prefHeight="300.0" prefWidth="300.0" stylesheets="@../css/TableView.css">
                      <children>
-                        <TableView fx:id="tableR" prefHeight="300.0" prefWidth="654.0" stylesheets="@../css/TableView.css">
+                        <TableView fx:id="tableR" prefHeight="300.0" prefWidth="690.0" stylesheets="@../css/TableView.css">
                           <columns>
                             <TableColumn fx:id="tableID" prefWidth="73.0" text="Identifiant" />
                             <TableColumn fx:id="tableUser" prefWidth="77.0" text="Username" />
