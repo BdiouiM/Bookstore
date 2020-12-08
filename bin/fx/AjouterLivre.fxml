@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" fx:id="anchorPane" prefHeight="450.0" prefWidth="732.0" style="-fx-background-color: #B0E0E6;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="fx.AjouterLivreController">
+   <children>
+      <HBox prefHeight="527.0" prefWidth="744.0" stylesheets="@../css/MenuButton.css">
+         <children>
+            <VBox alignment="CENTER" prefHeight="527.0" prefWidth="232.0" style="-fx-background-color: #FFF;">
+               <children>
+                  <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../images/adminLogo.png" />
+                     </image>
+                  </ImageView>
+                  <Label fx:id="username" text="Username" textFill="ORANGE">
+                     <font>
+                        <Font name="Comic Sans MS" size="28.0" />
+                     </font>
+                  </Label>
+               </children>
+            </VBox>
+            <VBox prefHeight="527.0" prefWidth="507.0">
+               <children>
+                  <HBox prefHeight="100.0" prefWidth="200.0">
+                     <children>
+                        <Label text="        Ajouter le livre :" textFill="WHITE">
+                           <font>
+                              <Font name="Britannic Bold" size="37.0" />
+                           </font>
+                           <padding>
+                              <Insets left="50.0" top="30.0" />
+                           </padding>
+                        </Label>
+                     </children>
+                  </HBox>
+                  <HBox alignment="CENTER" prefHeight="70.0" prefWidth="200.0">
+                     <children>
+                        <Label text="Genre :" textFill="ORANGE">
+                           <font>
+                              <Font name="Britannic Bold" size="25.0" />
+                           </font>
+                           <padding>
+                              <Insets left="20.0" right="20.0" />
+                           </padding>
+                        </Label>
+                        <TextField fx:id="labelGenre" prefHeight="25.0" prefWidth="174.0">
+                           <opaqueInsets>
+                              <Insets left="40.0" />
+                           </opaqueInsets>
+                        </TextField>
+                     </children>
+                  </HBox>
+                  <HBox alignment="CENTER" prefHeight="70.0" prefWidth="200.0">
+                     <children>
+                        <Label text="Titre :" textFill="ORANGE">
+                           <font>
+                              <Font name="Britannic Bold" size="25.0" />
+                           </font>
+                           <HBox.margin>
+                              <Insets right="20.0" />
+                           </HBox.margin>
+                        </Label>
+                        <TextField fx:id="labelTitre" prefHeight="25.0" prefWidth="174.0">
+                           <opaqueInsets>
+                              <Insets left="40.0" />
+                           </opaqueInsets>
+                        </TextField>
+                     </children>
+                  </HBox>
+                  <HBox alignment="CENTER" prefHeight="70.0" prefWidth="200.0">
+                     <children>
+                        <Label text="Auteur" textFill="ORANGE">
+                           <font>
+                              <Font name="Britannic Bold" size="25.0" />
+                           </font>
+                           <HBox.margin>
+                              <Insets right="20.0" />
+                           </HBox.margin>
+                        </Label>
+                        <TextField fx:id="labelAuteur" prefHeight="27.0" prefWidth="174.0">
+                           <opaqueInsets>
+                              <Insets left="40.0" />
+                           </opaqueInsets>
+                        </TextField>
+                     </children>
+                  </HBox>
+                  <HBox alignment="CENTER" prefHeight="70.0" prefWidth="200.0">
+                     <children>
+                        <Label text="Prix :" textFill="ORANGE">
+                           <font>
+                              <Font name="Britannic Bold" size="25.0" />
+                           </font>
+                           <padding>
+                              <Insets right="20.0" />
+                           </padding>
+                        </Label>
+                        <TextField fx:id="labelPrix" prefHeight="27.0" prefWidth="174.0" />
+                     </children>
+                     <VBox.margin>
+                        <Insets />
+                     </VBox.margin>
+                  </HBox>
+                  <HBox alignment="CENTER" prefHeight="70.0" prefWidth="200.0">
+                     <children>
+                        <Label text="Nombre de pages :" textFill="ORANGE">
+                           <font>
+                              <Font name="Britannic Bold" size="25.0" />
+                           </font>
+                           <padding>
+                              <Insets right="20.0" />
+                           </padding>
+                        </Label>
+                        <TextField fx:id="labelnbrPages" prefHeight="27.0" prefWidth="174.0" />
+                     </children>
+                  </HBox>
+                  <HBox alignment="CENTER" prefHeight="70.0" prefWidth="200.0">
+                     <children>
+                        <Button fx:id="mesRec" mnemonicParsing="false" onAction="#MesLivres" style="-fx-background-color: #FFA500;" styleClass="btn-menu" text="Retour à la liste des livres" textFill="WHITE">
+                           <HBox.margin>
+                              <Insets right="70.0" />
+                           </HBox.margin>
+                        </Button>
+                        <Button fx:id="Ajouter" mnemonicParsing="false" onAction="#Ajouter" style="-fx-background-color: #FFA500;" styleClass="btn-menu" text="Ajouter" textFill="WHITE" />
+                     </children>
+                     <VBox.margin>
+                        <Insets top="40.0" />
+                     </VBox.margin>
+                  </HBox>
+               </children>
+            </VBox>
+         </children>
+      </HBox>
+   </children>  
+</AnchorPane>
