@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.net.URL?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #B0E0E6;" styleClass="mainFxmlClass" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="bookstore.fx.EnvoyerEchangeController">
+    
+   <children>
+      <Label layoutX="78.0" layoutY="47.0" text="Envoyer Un echange" />
+      <Label layoutX="106.0" layoutY="106.0" text="Code:" />
+      <Label layoutX="95.0" layoutY="170.0" text=" CIN du client :" />
+      <Label layoutX="95.0" layoutY="241.0" text="Nom du Livre :" />
+      <TextField fx:id="Identifiantechange" layoutX="317.0" layoutY="103.0" />
+      <TextField fx:id="CIN1" layoutX="311.0" layoutY="175.0" />
+      <TextField fx:id="Titre1" layoutX="311.0" layoutY="237.0" stylesheets="@../css/MenuButton.css" />
+      <Button layoutX="248.0" layoutY="322.0" mnemonicParsing="false" onAction="#envoyerEchange" text="Envoyer">
+         <stylesheets>
+            <URL value="@../css/MenuButton.css" />
+            <URL value="@../css/MenuButton.css" />
+         </stylesheets></Button>
+   </children>
+</AnchorPane>

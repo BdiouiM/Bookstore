@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.image.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<HBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="557.0" prefWidth="826.0" stylesheets="@../css/Authentification.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="bookstore.fx.AuthentificationController">
+   <children>
+      <VBox alignment="CENTER" prefHeight="557.0" prefWidth="300.0" style="-fx-background-color: #FFF;">
+         <children>
+            <ImageView fitHeight="204.0" fitWidth="288.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../images/book.gif" />
+               </image>
+            </ImageView>
+            <Label text="Welcome" textFill="ORANGE">
+               <font>
+                  <Font name="Tahoma Bold" size="30.0" />
+               </font></Label>
+         </children>
+      </VBox>
+      <VBox prefHeight="557.0" prefWidth="562.0" style="-fx-background-color: #ADD8E6;">
+         <children>
+            <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0">
+               <children>
+                  <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../images/booklogo.png" />
+                     </image>
+                     <HBox.margin>
+                        <Insets left="120.0" top="40.0" />
+                     </HBox.margin>
+                  </ImageView>
+                  <Label text="Sign In" textFill="WHITE">
+                     <font>
+                        <Font name="Comic Sans MS Bold" size="49.0" />
+                     </font>
+                     <HBox.margin>
+                        <Insets top="40.0" />
+                     </HBox.margin></Label>
+               </children>
+            </HBox>
+            <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0">
+               <children>
+                  <ImageView fitHeight="70.0" fitWidth="150.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../images/user.png" />
+                     </image>
+                     <HBox.margin>
+                        <Insets left="50.0" top="10.0" />
+                     </HBox.margin>
+                  </ImageView>
+                  <TextField fx:id="username" prefHeight="44.0" prefWidth="293.0" promptText="Username">
+                     <HBox.margin>
+                        <Insets left="20.0" />
+                     </HBox.margin>
+                  </TextField>
+               </children>
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets></HBox>
+            <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0">
+               <children>
+                  <ImageView fitHeight="70.0" fitWidth="150.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../images/password.png" />
+                     </image>
+                     <HBox.margin>
+                        <Insets left="50.0" top="10.0" />
+                     </HBox.margin>
+                  </ImageView>
+                  <PasswordField fx:id="password" prefHeight="44.0" prefWidth="293.0" promptText="Password">
+                     <HBox.margin>
+                        <Insets left="20.0" />
+                     </HBox.margin>
+                  </PasswordField>
+               </children>
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+            </HBox>
+            <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+               <children>
+                  <Button mnemonicParsing="false" onAction="#Login" prefHeight="44.0" prefWidth="161.0" styleClass="btn-login" text="Login" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="20.0" />
+                     </font></Button>
+               </children>
+            </HBox>
+         </children></VBox>
+   </children>
+</HBox>
