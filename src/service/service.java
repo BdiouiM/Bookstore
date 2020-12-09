@@ -37,13 +37,9 @@ public class service implements interface_livraison {
             PreparedStatement ps = cnx.getConnection().prepareStatement(req);
             ps.setInt(1, v.getId()); 
             ps.setString(2, v.getCoords());
-            
           ps.setString(3,v.getAdrClient());
             ps.setInt(4, v.getId_client());
             ps.setInt(5, v.getId_livreur());
-           
-            
-            
             ps.executeUpdate(); 
         } catch (SQLException ex) {
             System.err.println("erreur");
@@ -52,14 +48,10 @@ public class service implements interface_livraison {
         try {
             // throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
             
-           String sql = "UPDATE livraison SET id=?,coords=?,adrClient=?, id_client=?, id_livreur=? ";
+           String sql = "UPDATE livraison SET adrClient=?";
             PreparedStatement ps = cnx.getConnection().prepareStatement(sql); 
-           ps.setInt(1, v.getId());
-            
-           ps.setInt(4, v.getId_client());
-            ps.setInt(5, v.getId_livreur());
-            ps.setString(2, v.getCoords());
-           ps.setString(3,v.getAdrClient());
+       
+           ps.setString(1,v.getAdrClient());
  
 int rowsUpdated = ps.executeUpdate();
 if (rowsUpdated > 0) {

@@ -13,7 +13,7 @@ import java.util.Objects;
  */
 public class livraison {
     private int id ; 
-        private String coords ; 
+       private String coords ; 
 private String adrClient ;
     private int  id_client ; 
     private int id_livreur ;

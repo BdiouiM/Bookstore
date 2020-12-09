@@ -45,11 +45,13 @@
                   <Insets left="300.0" />
                </VBox.margin>
             </Label>
-            <TableView prefHeight="300.0" prefWidth="749.0">
+            <TableView id="tbl" fx:id="tbl" prefHeight="500.0" prefWidth="749.0">
               <columns>
-                <TableColumn prefWidth="106.0" text="livraison N°" />
-                <TableColumn prefWidth="139.0" text="Nom" />
-                <TableColumn prefWidth="560.0" text="Adresse de livraison" />
+                <TableColumn id="id" fx:id="id" prefWidth="106.0" text="livraison N°" />
+                <TableColumn id="id_client" fx:id="id_client" prefWidth="112.0" text="id_client" />
+                <TableColumn id="id_lirveur" fx:id="id_livreur" prefWidth="101.0" text="id_livreur" />
+                <TableColumn id="nom" fx:id="nom" prefWidth="139.0" text="Nom" />
+                <TableColumn id="adr" fx:id="adr" prefWidth="347.0" text="Adresse de livraison" />
               </columns>
                <opaqueInsets>
                   <Insets />
@@ -66,7 +68,7 @@
                   <Insets />
                </opaqueInsets>
                <children>
-             <Button mnemonicParsing="false" onAction="#afficherMap" id="mp"  prefHeight="44.0" prefWidth="200.0" styleClass="btn-login" text="Voir map" textFill="WHITE">
+             <Button id="mp" mnemonicParsing="false" onAction="#afficherMap" prefHeight="44.0" prefWidth="200.0" styleClass="btn-login" text="Voir map" textFill="WHITE">
                      <font>
                         <Font name="System Bold" size="20.0" />
                      </font>

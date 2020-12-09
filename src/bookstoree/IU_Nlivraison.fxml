@@ -11,7 +11,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<HBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="557.0" prefWidth="826.0" stylesheets="@../css/welcome.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="bookstoree.IU_MlivraisonController">
+<HBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="557.0" prefWidth="826.0" stylesheets="@../css/welcome.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="bookstoree.IU_NlivraisonController">
    <children>
       
       <VBox prefHeight="557.0" prefWidth="826.0" style="-fx-background-color: #ADD8E6;">
@@ -44,7 +44,7 @@
                   <Insets left="10.0" />
                </VBox.margin>
             </Label>
-            <TextField>
+            <TextField id="tel" fx:id="nom">
                <padding>
                   <Insets top="10.0" />
                </padding>
@@ -60,7 +60,7 @@
                   <Insets left="10.0" />
                </VBox.margin>
             </Label>
-            <TextField>
+            <TextField id="tel" fx:id="tel">
                <padding>
                   <Insets top="10.0" />
                </padding>
@@ -76,7 +76,7 @@
                   <Insets left="10.0" />
                </VBox.margin>
             </Label>
-            <TextField>
+            <TextField id="adr" fx:id="adr">
                <VBox.margin>
                   <Insets left="10.0" right="300.0" />
                </VBox.margin>
@@ -102,7 +102,7 @@
                   <Insets />
                </opaqueInsets>
                <children>
-             <Button mnemonicParsing="false" prefHeight="44.0" prefWidth="200.0" styleClass="btn-login" text="Confirmer" textFill="WHITE">
+             <Button fx:id="ajouter" mnemonicParsing="false" onAction="#ajouter" prefHeight="44.0" prefWidth="200.0" styleClass="btn-login" text="Confirmer" textFill="WHITE">
                      <font>
                         <Font name="System Bold" size="20.0" />
                      </font>

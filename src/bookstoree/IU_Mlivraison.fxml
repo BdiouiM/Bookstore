@@ -44,7 +44,7 @@
                   <Insets left="10.0" />
                </VBox.margin>
             </Label>
-            <ComboBox id="combo" minWidth="-Infinity" prefWidth="300.0" promptText="choisir ...">
+            <ComboBox id="combo" fx:id="combo" minWidth="-Infinity" prefWidth="300.0" promptText="choisir ...">
                <VBox.margin>
                   <Insets left="10.0" />
                </VBox.margin>
@@ -57,7 +57,7 @@
                   <Insets left="10.0" />
                </VBox.margin>
             </Label>
-            <TextField>
+            <TextField id="adr" fx:id="adr">
                <VBox.margin>
                   <Insets left="10.0" right="300.0" />
                </VBox.margin>
@@ -73,7 +73,7 @@
                   <Insets left="10.0" />
                </VBox.margin>
             </Label>
-            <TextField>
+            <TextField id="date" fx:id="date">
                <VBox.margin>
                   <Insets left="10.0" right="300.0" />
                </VBox.margin>
@@ -86,7 +86,7 @@
                   <Insets />
                </opaqueInsets>
                <children>
-             <Button mnemonicParsing="false" prefHeight="44.0" prefWidth="200.0" styleClass="btn-login" text="Confirmer" textFill="WHITE">
+             <Button mnemonicParsing="false" id="modifer" fx:id="modifier" onAction="#modifier" prefHeight="44.0" prefWidth="200.0" styleClass="btn-login" text="Confirmer" textFill="WHITE">
                      <font>
                         <Font name="System Bold" size="20.0" />
                      </font>
