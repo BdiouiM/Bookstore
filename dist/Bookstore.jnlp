@@ -8,7 +8,9 @@
   </information>
   <resources>
     <j2se version="1.6+" href="http://java.sun.com/products/autodl/j2se"/>
-    <jar href="Bookstore.jar" size="1328972" download="eager" />
+    <jar href="Bookstore.jar" size="1332070" download="eager" />
+    <jar href="lib\controlsfx-8.40.18.jar" size="1436095" download="eager" />
+    <jar href="lib\controlsfx-samples-8.40.18.jar" size="808667" download="eager" />
     <jar href="lib\dsn.jar" size="18478" download="eager" />
     <jar href="lib\imap.jar" size="178013" download="eager" />
     <jar href="lib\javax.mail.jar" size="659033" download="eager" />

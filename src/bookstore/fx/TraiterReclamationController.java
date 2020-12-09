@@ -3,6 +3,7 @@
 import bookstore.connexion.bookstoreConnexion;
 import bookstore.exception.ReclamationExisteException;
 import bookstore.model.Reclamation;
+import bookstore.service.NotificationAPI;
 import bookstore.service.ServiceAdmin;
 import bookstore.service.ServiceClient;
 import java.net.URL;
@@ -209,6 +210,7 @@ public class TraiterReclamationController implements Initializable {
                      System.out.println("id :"+r.getIdentifiant());
             
             sa.annulerReclamation(r);
+            NotificationAPI.notifConfirm("Réclamation", "Annulée");
         } catch (ReclamationExisteException ex) {
             System.err.println("erreur dans l'annulation:  "+ex);      
         }
@@ -279,7 +281,8 @@ public class TraiterReclamationController implements Initializable {
             ServiceAdmin sa=new ServiceAdmin();
                  System.out.println(r.getIdentifiant());
             sa.validerReclamations(r);
-            sa.SendSMS();
+            //sa.SendSMS();
+            NotificationAPI.notifConfirm("Réclamation", "Validée");
         } catch (ReclamationExisteException ex) {
             System.err.println("erreur dans la validation");      
         }  
