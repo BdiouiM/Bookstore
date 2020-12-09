@@ -92,7 +92,7 @@ if (rowsUpdated > 0) {
 }
        public void  suprrimer_livraison(livraison v ) {
                 try {
-       String sql = "DELETE FROM livraison WHERE id_livraison=3";
+       String sql = "DELETE FROM livraison WHERE id_livraison=2";
 PreparedStatement ps = cnx.getConnection().prepareStatement(sql);
 ps.executeUpdate(sql); } catch (SQLException ex) {
             System.err.println("erreur");

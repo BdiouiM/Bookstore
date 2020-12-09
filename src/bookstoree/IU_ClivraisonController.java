@@ -25,11 +25,15 @@ import java.sql.ResultSet;
 import java.sql.Statement;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import javafx.scene.control.Button;
+import javafx.scene.control.TableCell;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.Region;
 import javafx.scene.layout.StackPane;
+import javafx.util.Callback;
+import service.service;
 
 /**
  * FXML Controller class
@@ -65,6 +69,8 @@ public class IU_ClivraisonController implements Initializable {
           InitColumn();
           livraison=loadData(livraison);
           tbl.setItems(livraison);
+          //ajouter buton annuler
+           addAnnulerToTableView();
           
    
     }    
@@ -130,6 +136,69 @@ public class IU_ClivraisonController implements Initializable {
       }
     
   }
+       public void addAnnulerToTableView(){
+        
+        TableColumn<livraison, Void> tableAnnuler = new TableColumn("Annuler");
+        Callback<TableColumn<livraison, Void>, TableCell<livraison, Void>> cellFactory = new Callback<TableColumn<livraison, Void>, TableCell<livraison, Void>>() {
+            @Override
+            public TableCell<livraison, Void> call(final TableColumn<livraison, Void> param) {
+                final TableCell<livraison, Void> cell = new TableCell<livraison, Void>() {
+
+                    private final Button btn = new Button("annuler livraison");
+
+                    {
+                        
+                        
+                        btn.setOnAction((ActionEvent event) -> {
+                            int cu = getTableView().getItems().get(getIndex()).getId();
+                             String d = getTableView().getItems().get(getIndex()).getCoords();
+                              String t = getTableView().getItems().get(getIndex()).getAdrClient();
+                               int i = getTableView().getItems().get(getIndex()).getId_client();
+                               int j = getTableView().getItems().get(getIndex()).getId_livreur();
+                            livraison r = new livraison();
+                            System.out.println("selected livraison : " + i);
+                            r.setId(cu);
+                            r.setCoords(d);
+                            r.setAdrClient(t);
+                            r.setId_client(i);
+                            r.setId_livreur(j);
+                            annulerButton(r);
+                        });
+                    }
+
+                    @Override
+                    public void updateItem(Void item, boolean empty) {
+                        super.updateItem(item, empty);
+                        if (empty) {
+                            setGraphic(null);
+                        } else {
+                            setGraphic(btn);
+                        }
+                    }
+                };
+                return cell;
+            }
+        };
+       tableAnnuler.setCellFactory(cellFactory);
+       tbl.getColumns().add(tableAnnuler);
+         
+    }
+    public void annulerButton(livraison r){
+      
+                 try {
+            System.out.println("reclamation test");
+            service sa=new service();
+                     System.out.println("id :"+r.getId());
+            
+            sa.supprimer_livraison(r);
+        } catch (Exception ex) {
+            System.err.println("erreur dans l'annulation:  "+ex);      
+        }
+          
+         
+        
+       
+    }
    
     
     
