@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.net.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.image.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<HBox fx:id="parentChildren" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="557.0" prefWidth="826.0" stylesheets="@../css/Authentification.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="bookstore.fx.HomeController">
+   <children>
+      <VBox alignment="CENTER" prefHeight="557.0" prefWidth="300.0" style="-fx-background-color: #FFF;">
+         <children>
+            <ImageView fitHeight="204.0" fitWidth="288.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../images/book.gif" />
+               </image>
+            </ImageView>
+            <Label text="Home" textFill="ORANGE">
+               <font>
+                  <Font name="Tahoma Bold" size="30.0" />
+               </font></Label>
+         </children>
+      </VBox>
+      <VBox prefHeight="557.0" prefWidth="562.0" style="-fx-background-color: #ADD8E6;">
+         <children>
+            <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0">
+               <children>
+                  <ImageView fitHeight="90.0" fitWidth="92.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../images/booklogo.png" />
+                     </image>
+                     <HBox.margin>
+                        <Insets />
+                     </HBox.margin>
+                  </ImageView>
+                  <Label prefHeight="60.0" prefWidth="274.0" text="Page d'accueil" textFill="WHITE">
+                     <font>
+                        <Font name="Comic Sans MS Bold" size="35.0" />
+                     </font>
+                     <HBox.margin>
+                        <Insets left="30.0" />
+                     </HBox.margin>
+                     <padding>
+                        <Insets right="15.0" />
+                     </padding></Label>
+                  <Button mnemonicParsing="false" onAction="#authentification" styleClass="btn-menu" text="S'authentifier">
+                     <stylesheets>
+                        <URL value="@../css/MenuButton.css" />
+                        <URL value="@../css/ButtonUtilisateur.css" />
+                     </stylesheets>
+                     <HBox.margin>
+                        <Insets left="20.0" />
+                     </HBox.margin></Button>
+               </children>
+            </HBox>
+            <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0">
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets></HBox>
+            <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0">
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+            </HBox>
+            <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+            </HBox>
+            <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
+               <opaqueInsets>
+                  <Insets top="50.0" />
+               </opaqueInsets>
+               <children>
+                  <Button fx:id="inscrit" mnemonicParsing="false" styleClass="btn-menu" stylesheets="@../css/ButtonUtilisateur.css" text="S'inscrire">
+                     <HBox.margin>
+                        <Insets left="370.0" top="20.0" />
+                     </HBox.margin></Button>
+               </children>
+               <VBox.margin>
+                  <Insets top="100.0" />
+               </VBox.margin>
+            </HBox>
+         </children></VBox>
+   </children>
+</HBox>

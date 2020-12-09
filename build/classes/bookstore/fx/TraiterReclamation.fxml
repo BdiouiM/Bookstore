@@ -9,11 +9,11 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="909.0" style="-fx-background-color: #ADD8E6;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="bookstore.fx.TraiterReclamationController">
+<AnchorPane id="AnchorPane" fx:id="parentChildren" prefHeight="557.0" prefWidth="826.0" style="-fx-background-color: #ADD8E6;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="bookstore.fx.TraiterReclamationController">
    <children>
-      <HBox prefHeight="444.0" prefWidth="981.0" stylesheets="@../css/TableView.css">
+      <HBox prefHeight="557.0" prefWidth="981.0" stylesheets="@../css/TableView.css">
          <children>
-            <VBox alignment="CENTER" prefHeight="444.0" prefWidth="244.0" style="-fx-background-color: #FFF;">
+            <VBox alignment="CENTER" prefHeight="554.0" prefWidth="244.0" style="-fx-background-color: #FFF;">
                <children>
                   <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
                      <image>

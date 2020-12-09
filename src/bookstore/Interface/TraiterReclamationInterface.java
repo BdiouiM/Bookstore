@@ -10,5 +10,6 @@ public interface TraiterReclamationInterface {
      public boolean validerReclamations(Reclamation r) throws ReclamationExisteException;
      public boolean TraiterReclamation(Reclamation r);
      public int NombreReclamations();
+     public void SendSMS();
      
 }

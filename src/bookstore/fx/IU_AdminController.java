@@ -14,6 +14,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Label;
+import javafx.scene.layout.HBox;
 import javafx.stage.Stage;
 
 /**
@@ -24,6 +25,8 @@ import javafx.stage.Stage;
 public class IU_AdminController implements Initializable {
     @FXML
     private Label username;
+    @FXML
+    private HBox parentChildren;
 
     /**
      * Initializes the controller class.
@@ -42,9 +45,7 @@ public class IU_AdminController implements Initializable {
               String user=username.getText();
              FXMLLoader loader=new FXMLLoader(getClass().getResource("TraiterReclamation.fxml"));
              Parent root1=(Parent) loader.load();
-             Stage stage=new Stage();
-             stage.setScene(new Scene(root1));
-             stage.show();
+             loadPage(root1);
              TraiterReclamationController iuTR = loader.getController();
              iuTR.setUsername(user);
             } catch(Exception e) {
@@ -63,5 +64,8 @@ public class IU_AdminController implements Initializable {
     @FXML
     private void IU_Echange(ActionEvent event) {
     }
-    
+    public void loadPage(Parent root){
+       parentChildren.getChildren().removeAll();
+       parentChildren.getChildren().setAll(root);
+    }
 }

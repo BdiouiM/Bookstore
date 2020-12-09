@@ -14,6 +14,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Label;
+import javafx.scene.layout.HBox;
 import javafx.stage.Stage;
 
 /**
@@ -24,6 +25,8 @@ import javafx.stage.Stage;
 public class IU_BibliothecaireController implements Initializable {
     @FXML
     private Label username;
+    @FXML
+    private HBox parentChildren;
 
     
     @Override
@@ -40,15 +43,16 @@ public class IU_BibliothecaireController implements Initializable {
               String user=username.getText();
              FXMLLoader loader=new FXMLLoader(getClass().getResource("VerifierStock.fxml"));
              Parent root1=(Parent) loader.load();
-             Stage stage=new Stage();
-             stage.setScene(new Scene(root1));
-             stage.show();
+             loadPage(root1);
              VerifierStockController vs = loader.getController();
              vs.setUser(user);
             } catch(Exception e) {
             System.err.println("erreur dans stock biblio" + e);
             }
     }
-
+ public void loadPage(Parent root){
+       parentChildren.getChildren().removeAll();
+       parentChildren.getChildren().setAll(root);
+    }
     
 }

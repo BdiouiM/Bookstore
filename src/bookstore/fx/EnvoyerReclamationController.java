@@ -31,6 +31,7 @@ import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.DatePicker;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
+import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 import javafx.util.Duration;
@@ -59,7 +60,7 @@ public class EnvoyerReclamationController {
     @FXML
     private Button mesRec;
     @FXML
-    private AnchorPane anchorPane;
+    private AnchorPane parentChildren;
     public void initialize() {
         labelDateReclamation.setValue(LocalDate.now());
         labelType.setValue("Type1");
@@ -102,9 +103,7 @@ public class EnvoyerReclamationController {
              Parent root1=(Parent) loader.load();
              MesReclamationClientController rc = loader.getController();
              rc.setUsername(username.getText());
-             Stage stage=new Stage();
-             stage.setScene(new Scene(root1));
-             stage.show();
+             loadPage(root1);
         } catch (IOException ex) {
             System.err.println(ex);
         }
@@ -118,5 +117,18 @@ public class EnvoyerReclamationController {
          a.setHeaderText("Reclamation Invalid");
           a.setContentText("Veuillez remplir la description");
           a.showAndWait();
+    }
+       public void loadPage(Parent root){
+       parentChildren.getChildren().removeAll();
+       parentChildren.getChildren().setAll(root);
+    }
+
+    @FXML
+    private void backTo(MouseEvent event) throws IOException {
+        FXMLLoader loader=new FXMLLoader(getClass().getResource("IU_Client.fxml"));
+              Parent root1= loader.load();
+             IU_ClientController iuc = loader.getController();
+             iuc.setUsername(username.getText());
+             loadPage(root1);
     }
 }

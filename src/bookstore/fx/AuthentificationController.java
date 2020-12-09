@@ -17,6 +17,8 @@ import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
+import javafx.scene.input.MouseEvent;
+import javafx.scene.layout.HBox;
 import javafx.stage.Stage;
 
 /**
@@ -29,6 +31,8 @@ public class AuthentificationController implements Initializable {
     private TextField username;
     @FXML
     private PasswordField password;
+    @FXML
+    private HBox parentChildren;
 
    
     @Override
@@ -46,11 +50,9 @@ public class AuthentificationController implements Initializable {
               try {
              FXMLLoader loader=new FXMLLoader(getClass().getResource("IU_Admin.fxml"));
              Parent root1=(Parent) loader.load();
-             Stage stage=new Stage();
-             stage.setScene(new Scene(root1));
-             stage.show();
              IU_AdminController iuadmin = loader.getController();
              iuadmin.setUsername(user);
+             loadPage(root1);
             } catch(Exception e) {
             System.err.println("erreur dans iu admin");
             }
@@ -62,10 +64,7 @@ public class AuthentificationController implements Initializable {
              Parent root1=(Parent) loader.load();
              IU_BibliothecaireController iubiblio=loader.getController();
              iubiblio.setUsername(user);
-             Stage stage=new Stage();
-             stage.setScene(new Scene(root1));
-             stage.show();
-
+             loadPage(root1);
             } catch(Exception e) {
             System.err.println("erreur dans iu biblio");
             }
@@ -79,9 +78,7 @@ public class AuthentificationController implements Initializable {
              Parent root1=(Parent) loader.load();
              IU_ClientController iuclient = loader.getController();
              iuclient.setUsername(user);
-             Stage stage=new Stage();
-             stage.setScene(new Scene(root1));
-             stage.show();
+             loadPage(root1);
 
             } catch(Exception e) {
             System.err.println("erreur dans iu client" + e);
@@ -100,5 +97,21 @@ public class AuthentificationController implements Initializable {
          a.setHeaderText("Utilisateur Invalid");
           a.setContentText("Vérifier votre compte");
           a.showAndWait();
+    }
+    public void loadPage(Parent root){
+       parentChildren.getChildren().removeAll();
+       parentChildren.getChildren().setAll(root);
+    }
+
+    @FXML
+    private void back(MouseEvent event) {
+          try {
+             FXMLLoader loader=new FXMLLoader(getClass().getResource("Home.fxml"));
+             Parent root1=(Parent) loader.load();
+         
+             loadPage(root1);
+            } catch(Exception e) {
+            System.err.println("erreur dans iu home");
+            }
     }
 }

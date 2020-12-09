@@ -111,6 +111,8 @@ public class MesReclamationClientController implements Initializable {
              
              Parent root=(Parent) loader.load();  
              Scene scene = back.getScene();
+             EnvoyerReclamationController er = loader.getController();
+             er.setUsername(username.getText());
              root.translateYProperty().set(scene.getHeight());
              
              parent.getChildren().add(root);

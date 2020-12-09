@@ -14,6 +14,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Label;
+import javafx.scene.layout.HBox;
 import javafx.stage.Stage;
 
 /**
@@ -24,13 +25,14 @@ import javafx.stage.Stage;
 public class IU_ClientController implements Initializable {
     @FXML
     private Label username;
+    @FXML
+    private HBox parentChildren;
 
     /**
      * Initializes the controller class.
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-       // setUsername(null);
     }    
     public void setUsername(String username)
     {
@@ -43,16 +45,18 @@ public class IU_ClientController implements Initializable {
               String user=username.getText();
              FXMLLoader loader=new FXMLLoader(getClass().getResource("EnvoyerReclamation.fxml"));
              Parent root1=(Parent) loader.load();
-             Stage stage=new Stage();
-             stage.setScene(new Scene(root1));
-             stage.show();
+             loadPage(root1);
              EnvoyerReclamationController iueR = loader.getController();
              iueR.setUsername(user);
             } catch(Exception e) {
             System.err.println("erreur dans reclamation client");
             }
     }
-
+   public void loadPage(Parent root){
+       parentChildren.getChildren().removeAll();
+       parentChildren.getChildren().setAll(root);
+    }
+   
     @FXML
     private void IU_Livre(ActionEvent event) {
     }

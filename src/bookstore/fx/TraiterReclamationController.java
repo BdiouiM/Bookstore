@@ -1,4 +1,4 @@
-package bookstore.fx;
+ package bookstore.fx;
 
 import bookstore.connexion.bookstoreConnexion;
 import bookstore.exception.ReclamationExisteException;
@@ -23,6 +23,7 @@ import javafx.event.EventHandler;
 import javafx.event.EventType;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.Parent;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
@@ -31,6 +32,7 @@ import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.layout.AnchorPane;
 import javafx.scene.text.Text;
 import javafx.util.Callback;
 import sun.plugin2.jvm.RemoteJVMLauncher;
@@ -64,6 +66,8 @@ public class TraiterReclamationController implements Initializable {
     private Label user;
     @FXML
     private TextField chercher;
+    @FXML
+    private AnchorPane parentChildren;
     
     @Override
     public void initialize(URL url, ResourceBundle rb) {
@@ -275,6 +279,7 @@ public class TraiterReclamationController implements Initializable {
             ServiceAdmin sa=new ServiceAdmin();
                  System.out.println(r.getIdentifiant());
             sa.validerReclamations(r);
+            sa.SendSMS();
         } catch (ReclamationExisteException ex) {
             System.err.println("erreur dans la validation");      
         }  
@@ -286,5 +291,9 @@ public class TraiterReclamationController implements Initializable {
          a.setHeaderText("Reclamation n'existe pas");
           a.setContentText(username+"  n'a pas envoyé une réclamation");
           a.showAndWait();
+    }
+      public void loadPage(Parent root){
+       parentChildren.getChildren().removeAll();
+       parentChildren.getChildren().setAll(root);
     }
 }

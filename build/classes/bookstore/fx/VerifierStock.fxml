@@ -9,9 +9,9 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="810.0" style="-fx-background-color: #ADD8E6;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="bookstore.fx.VerifierStockController">
+<AnchorPane id="AnchorPane" fx:id="parentChildren" prefHeight="557.0" prefWidth="826.0" style="-fx-background-color: #ADD8E6;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="bookstore.fx.VerifierStockController">
    <children>
-      <VBox prefHeight="400.0" prefWidth="620.0">
+      <VBox prefHeight="557.0" prefWidth="620.0">
          <children>
             <HBox alignment="CENTER" prefHeight="50.0" prefWidth="200.0">
                <children>
@@ -58,7 +58,7 @@
                   <Insets />
                </opaqueInsets>
             </HBox>
-            <HBox prefHeight="235.0" prefWidth="620.0">
+            <HBox prefHeight="400.0" prefWidth="620.0">
                <children>
                   <TableView fx:id="tableL" prefHeight="225.0" prefWidth="569.0" stylesheets="@../css/TableView.css">
                     <columns>
@@ -87,7 +87,7 @@
                         <Font name="Arial Black" size="18.0" />
                      </font>
                      <HBox.margin>
-                        <Insets left="-15.0" />
+                        <Insets left="-30.0" />
                      </HBox.margin>
                   </Text>
                   <Text fx:id="nbrL1" fill="ORANGE" strokeType="OUTSIDE" strokeWidth="0.0">
@@ -99,7 +99,7 @@
             </HBox>
          </children>
       </VBox>
-      <VBox alignment="CENTER" layoutX="620.0" layoutY="2.0" prefHeight="394.0" prefWidth="190.0" style="-fx-background-color: #FFF;">
+      <VBox alignment="CENTER" layoutX="620.0" layoutY="2.0" prefHeight="557.0" prefWidth="190.0" style="-fx-background-color: #FFF;">
          <children>
             <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
                <image>

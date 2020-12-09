@@ -3,19 +3,23 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/ASUS/Documents/NetBeansProjects/Bookstore/src/bookstore/service/ServiceBibliothécaire.java</file>
+            <file>file:/C:/Users/ASUS/Documents/NetBeansProjects/Bookstore/src/bookstore/fx/Authentification.fxml</file>
+            <file>file:/C:/Users/ASUS/Documents/NetBeansProjects/Bookstore/src/bookstore/fx/Home.fxml</file>
+            <file>file:/C:/Users/ASUS/Documents/NetBeansProjects/Bookstore/src/bookstore/fx/HomeController.java</file>
             <file>file:/C:/Users/ASUS/Documents/NetBeansProjects/Bookstore/src/bookstore/fx/Bookstore.java</file>
-            <file>file:/C:/Users/ASUS/Documents/NetBeansProjects/Bookstore/src/bookstore/service/ServiceAuthentification.java</file>
-            <file>file:/C:/Users/ASUS/Documents/NetBeansProjects/Bookstore/src/bookstore/service/TestService.java</file>
-            <file>file:/C:/Users/ASUS/Documents/NetBeansProjects/Bookstore/src/bookstore/fx/VerifierStockController.java</file>
-            <file>file:/C:/Users/ASUS/Documents/NetBeansProjects/Bookstore/src/bookstore/fx/TraiterReclamationController.java</file>
-            <file>file:/C:/Users/ASUS/Documents/NetBeansProjects/Bookstore/src/bookstore/service/ServiceClient.java</file>
-            <file>file:/C:/Users/ASUS/Documents/NetBeansProjects/Bookstore/src/bookstore/service/ServiceAdmin.java</file>
-            <file>file:/C:/Users/ASUS/Documents/NetBeansProjects/Bookstore/src/bookstore/css/MenuButton.css</file>
             <file>file:/C:/Users/ASUS/Documents/NetBeansProjects/Bookstore/src/bookstore/fx/AuthentificationController.java</file>
             <file>file:/C:/Users/ASUS/Documents/NetBeansProjects/Bookstore/src/bookstore/fx/IU_AdminController.java</file>
-            <file>file:/C:/Users/ASUS/Documents/NetBeansProjects/Bookstore/nbproject/jfx-impl.xml</file>
-            <file>file:/C:/Users/ASUS/Documents/NetBeansProjects/Bookstore/nbproject/build-impl.xml</file>
+            <file>file:/C:/Users/ASUS/Documents/NetBeansProjects/Bookstore/src/bookstore/service/ServiceBussinessToCustomer.java</file>
+            <file>file:/C:/Users/ASUS/Documents/NetBeansProjects/Bookstore/src/bookstore/service/ServiceLivreur.java</file>
+            <file>file:/C:/Users/ASUS/Documents/NetBeansProjects/Bookstore/src/bookstore/service/ServiceVisiteur.java</file>
+            <file>file:/C:/Users/ASUS/Documents/NetBeansProjects/Bookstore/src/bookstore/fx/EnvoyerReclamationController.java</file>
+            <file>file:/C:/Users/ASUS/Documents/NetBeansProjects/Bookstore/src/bookstore/fx/MesReclamationClientController.java</file>
+            <file>file:/C:/Users/ASUS/Documents/NetBeansProjects/Bookstore/src/bookstore/css/MenuButton.css</file>
+            <file>file:/C:/Users/ASUS/Documents/NetBeansProjects/Bookstore/src/bookstore/css/ImageBack.css</file>
+            <file>file:/C:/Users/ASUS/Documents/NetBeansProjects/Bookstore/src/bookstore/Interface/TraiterReclamationInterface.java</file>
+            <file>file:/C:/Users/ASUS/Documents/NetBeansProjects/Bookstore/src/bookstore/service/ServiceAdmin.java</file>
+            <file>file:/C:/Users/ASUS/Documents/NetBeansProjects/Bookstore/src/bookstore/fx/TraiterReclamationController.java</file>
+            <file>file:/C:/Users/ASUS/Documents/NetBeansProjects/Bookstore/src/bookstore/fx/IU_ClientController.java</file>
         </group>
     </open-files>
 </project-private>

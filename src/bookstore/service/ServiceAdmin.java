@@ -5,6 +5,15 @@ import bookstore.model.Reclamation;
 import bookstore.Interface.ListerReclamationInterface;
 import bookstore.Interface.TraiterReclamationInterface;
 import bookstore.exception.ReclamationExisteException;
+import com.sun.deploy.net.URLEncoder;
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.io.UnsupportedEncodingException;
+import java.net.HttpURLConnection;
+import java.net.MalformedURLException;
+import java.net.URL;
+import java.net.URLConnection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -14,6 +23,8 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 import java.util.function.Consumer;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 public class ServiceAdmin implements TraiterReclamationInterface,ListerReclamationInterface{
 
@@ -175,6 +186,40 @@ public class ServiceAdmin implements TraiterReclamationInterface,ListerReclamati
         }
        
         return nombre;
+    }
+
+    @Override
+    public void SendSMS() {
+       try {
+                        String recipient = "22723458";
+                        String message = "Hello ";
+                        String username = "bdioui";
+                        String password = "bdioui";
+                        String originator = "22723458";
+ 
+                        String requestUrl  = "http://127.0.0.1:9501/api?action=sendmessage&" +
+            "username=" + URLEncoder.encode(username, "UTF-8") +
+            "&password=" + URLEncoder.encode(password, "UTF-8") +
+            "&recipient=" + URLEncoder.encode(recipient, "UTF-8") +
+            "&messagetype=SMS:TEXT" +
+            "&messagedata=" + URLEncoder.encode(message, "UTF-8") +
+            "&originator=" + URLEncoder.encode(originator, "UTF-8") +
+            "&serviceprovider=GSMModem1" +
+            "&responseformat=html";
+ 
+ 
+ 
+                        URL url = new URL(requestUrl);
+                        HttpURLConnection uc = (HttpURLConnection)url.openConnection();
+ 
+                        System.out.println(uc.getResponseMessage());
+ 
+                        uc.disconnect();
+ 
+                } catch(Exception ex) {
+                        System.out.println(ex.getMessage());
+ 
+                }
     }
     
 }

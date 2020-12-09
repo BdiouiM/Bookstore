@@ -8,7 +8,7 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<HBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" stylesheets="@../css/MenuButton.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="bookstore.fx.IU_BibliothecaireController">
+<HBox fx:id="parentChildren" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="557.0" prefWidth="826.0" stylesheets="@../css/MenuButton.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="bookstore.fx.IU_BibliothecaireController">
    <children>
       <VBox alignment="CENTER" prefHeight="400.0" prefWidth="174.0" style="-fx-background-color: #FFF;">
          <children>
@@ -25,7 +25,7 @@
                   <Font name="Comic Sans MS Bold" size="22.0" />
                </font></Label>
          </children></VBox>
-      <VBox prefHeight="400.0" prefWidth="430.0" style="-fx-background-color: #ADD8E6;">
+      <VBox prefHeight="557.0" prefWidth="666.0" style="-fx-background-color: #ADD8E6;">
          <children>
             <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" />
             <HBox alignment="CENTER" prefHeight="70.0" prefWidth="200.0" />
