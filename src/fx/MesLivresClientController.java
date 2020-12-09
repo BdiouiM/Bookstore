@@ -71,7 +71,10 @@ public class MesLivresClientController implements Initializable {
     private TableColumn<Book, String> Prix;
     @FXML
     private TableColumn<Book, String> Pages;
-   ObservableList<Book> Books = FXCollections.observableArrayList();
+    @FXML
+    private TableColumn<Book, String> Quantite;
+
+    ObservableList<Book> Books = FXCollections.observableArrayList();
     @FXML
     private Label username;
     
@@ -111,6 +114,7 @@ public class MesLivresClientController implements Initializable {
            Auteur.setCellValueFactory(new PropertyValueFactory<>("Auteur"));
            Prix.setCellValueFactory(new PropertyValueFactory<>("Prix"));
            Pages.setCellValueFactory(new PropertyValueFactory<>("nbrPages"));
+           Quantite.setCellValueFactory(new PropertyValueFactory<>("Quantite"));
            
     }
    public void setUsername(String user){
@@ -132,6 +136,7 @@ public class MesLivresClientController implements Initializable {
                    b.setAuteur(rs.getString("Auteur"));
                    b.setPrix(rs.getFloat("Prix"));
                    b.setNbrPages(rs.getInt("nbrPages"));
+                   b.setQuantite(rs.getInt("Quantite"));
                                                
                    Books.add(b);
                }
@@ -181,9 +186,9 @@ public class MesLivresClientController implements Initializable {
     	 try { 
     	
            String user=username.getText();
-    	 FXMLLoader loader=new FXMLLoader(getClass().getResource("AjouterLivre.fxml"));
+    	 FXMLLoader loader=new FXMLLoader(getClass().getResource("DetailsLivre.fxml"));
          Parent root1=(Parent) loader.load();
-         AjouterLivreController rc = loader.getController();
+         DetailsLivreController rc = loader.getController();
          rc.setUsername(user);
          Stage stage=new Stage();
          stage.setScene(new Scene(root1));

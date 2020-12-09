@@ -53,8 +53,10 @@ public class MesLivresAdminController implements Initializable {
 	 
     @FXML
     private Button back;
+    @FXML
     private Button ajouterButton;
-   
+    @FXML
+    private Button stats;
     @FXML
     private StackPane parent;
     @FXML
@@ -73,9 +75,13 @@ public class MesLivresAdminController implements Initializable {
     private TableColumn<Book, String> Prix;
     @FXML
     private TableColumn<Book, String> Pages;
+    @FXML
+    private TableColumn<Book, String> Quantite;
    ObservableList<Book> Books = FXCollections.observableArrayList();
     @FXML
     private Label username;
+    @FXML
+    private Label id;
     
     @FXML
     private TextField chercher;
@@ -114,11 +120,13 @@ public class MesLivresAdminController implements Initializable {
            Auteur.setCellValueFactory(new PropertyValueFactory<>("Auteur"));
            Prix.setCellValueFactory(new PropertyValueFactory<>("Prix"));
            Pages.setCellValueFactory(new PropertyValueFactory<>("nbrPages"));
+           Quantite.setCellValueFactory(new PropertyValueFactory<>("Quantite"));
            
     }
    public void setUsername(String user){
 	      this.username.setText(user);
 	   }
+  
   
     public ObservableList<Book> loadData(ObservableList<Book> Books){
         try{
@@ -135,6 +143,8 @@ public class MesLivresAdminController implements Initializable {
                    b.setAuteur(rs.getString("Auteur"));
                    b.setPrix(rs.getFloat("Prix"));
                    b.setNbrPages(rs.getInt("nbrPages"));
+                   b.setQuantite(rs.getInt("Quantite"));
+
                                                
                    Books.add(b);
                }
@@ -215,8 +225,8 @@ public class MesLivresAdminController implements Initializable {
                     {
                             btn.setOnAction((ActionEvent event) -> {
                             int i = getTableView().getItems().get(getIndex()).getId();
-                            System.out.println(i);
-                            ModifierButton(event);
+                            System.out.println("bbbbb:"+i);
+                            ModifierButton(event,i);
                         });
                     }
 
@@ -237,17 +247,19 @@ public class MesLivresAdminController implements Initializable {
        Table.getColumns().add(tableModifier);
          
     }
-    public void ModifierButton(ActionEvent event){
+    public void ModifierButton(ActionEvent event,int i){
     	try { 
     	
             String user=username.getText();
-    	 FXMLLoader loader=new FXMLLoader(getClass().getResource("ModifierLivre.fxml"));
+
+            FXMLLoader loader=new FXMLLoader(getClass().getResource("ModifierLivre.fxml"));
          Parent root1=(Parent) loader.load();
          ModifierLivreController rc = loader.getController();
          rc.setUsername(user);
          Stage stage=new Stage();
          stage.setScene(new Scene(root1));
          stage.show();
+         System.out.println("button"+i);
          
     } catch (IOException ex) {
         System.err.println(ex);
@@ -285,6 +297,22 @@ public class MesLivresAdminController implements Initializable {
     } catch (IOException ex) {
         System.err.println(ex);
     }
+    }
+    
+    @FXML
+    void voirStat(ActionEvent event) {
+    	 try {
+
+             FXMLLoader loader=new FXMLLoader(getClass().getResource("barchartAdminQuantite.fxml"));
+              Parent root1=(Parent) loader.load();
+             barchartAdminQuantiteController rc = loader.getController();
+             
+              Stage stage=new Stage();
+              stage.setScene(new Scene(root1));
+              stage.show();
+         } catch (IOException ex) {
+             System.err.println(ex);
+         }
     }
     
  

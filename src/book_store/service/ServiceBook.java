@@ -22,13 +22,14 @@ public ServiceBook() {
 	public void ajouterBook(Book b) {
 		// TODO Auto-generated method stub
          try {
-    		 String req= "insert into livre (Genre,Titre,Auteur,Prix,nbrPages) values (?,?,?,?,?)";
+    		 String req= "insert into livre (Genre,Titre,Auteur,Prix,nbrPages) values (?,?,?,?,?,?)";
 			PreparedStatement ps = cnx.getConnection().prepareStatement(req);
 			 ps.setString( 1, b.getGenre());
 			 ps.setString( 2, b.getTitre());
 			 ps.setString( 3, b.getAuteur());
 			 ps.setDouble( 4, b.getPrix());
 			 ps.setInt( 5, b.getNbrPages());
+			 ps.setInt( 6, b.getQuantite());
 
 	            ps.executeUpdate(); 
          } catch (SQLException e) {
@@ -74,7 +75,7 @@ e.printStackTrace();		}
 			}	
 	}
 	@Override
-	public void update(Book b, String Genre, String Titre, String Auteur, double Prix, int nbrPages) {
+	public void update(Book b, String Genre, String Titre, String Auteur, double Prix, int nbrPages, int Quantite) {
 		// TODO Auto-generated method stub
 		 
 		 try {
@@ -112,19 +113,19 @@ e.printStackTrace();		}
 			}	
 		
 	}
-	public void modifierBook(bookstore.model.Book b,int i) {
+	public void modifierBook(bookstore.model.Book b) {
 		
 		 try {
-	            String req= "UPDATE livre SET Genre=? , Titre=? , Auteur=? , Prix=? , nbrPages=? WHERE Id=?";
+	            String req= "UPDATE livre SET Genre=? , Titre=? , Auteur=? , Prix=? , nbrPages=? , Quantite=? WHERE Id=?";
 	            PreparedStatement ps = cnx.getConnection().prepareStatement(req);
 	             ps.setString(1, b.getGenre());
 	             ps.setString(2, b.getTitre());
 	             ps.setString(3, b.getAuteur());
 	             ps.setDouble(4, b.getPrix());
 	             ps.setInt(5, b.getNbrPages());
+	             ps.setInt(6, b.getQuantite());
 
-	             System.out.println(i);
-	             ps.setInt(6, i);
+	             ps.setInt(7, b.getId());
 	             ps.executeUpdate(); 
 	            System.out.println("Livre modifié");
 	        } catch (SQLException ex) {
@@ -136,19 +137,24 @@ e.printStackTrace();		}
 	public void ajouterBook(bookstore.model.Book b) {
 		// TODO Auto-generated method stub
 		 try {
-    		 String req= "insert into livre (Genre,Titre,Auteur,Prix,nbrPages) values (?,?,?,?,?)";
+    		 String req= "insert into livre (Genre,Titre,Auteur,Prix,nbrPages,Quantite) values (?,?,?,?,?,?)";
 			PreparedStatement ps = cnx.getConnection().prepareStatement(req);
 			 ps.setString( 1, b.getGenre());
 			 ps.setString( 2, b.getTitre());
 			 ps.setString( 3, b.getAuteur());
 			 ps.setDouble( 4, b.getPrix());
 			 ps.setInt( 5, b.getNbrPages());
+			 ps.setInt( 6, b.getQuantite());
 
 	            ps.executeUpdate(); 
          } catch (SQLException e) {
 			// TODO Auto-generated catch block
 e.printStackTrace();		}
 		
+	}
+	public ArrayList<bookstore.model.Book> getAll() {
+		// TODO Auto-generated method stub
+		return null;
 	}
 	
 }

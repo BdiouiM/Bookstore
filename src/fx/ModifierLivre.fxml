@@ -25,6 +25,11 @@
                         <Font name="Comic Sans MS" size="28.0" />
                      </font>
                   </Label>
+                  <Label fx:id="id" text="Id" textFill="ORANGE">
+                     <font>
+                        <Font name="Comic Sans MS" size="28.0" />
+                     </font>
+                  </Label>
                </children>
             </VBox>
             <VBox prefHeight="527.0" prefWidth="507.0">
@@ -123,12 +128,29 @@
                   </HBox>
                   <HBox alignment="CENTER" prefHeight="70.0" prefWidth="200.0">
                      <children>
+                        <Label text="Quantite :" textFill="ORANGE">
+                           <font>
+                              <Font name="Britannic Bold" size="25.0" />
+                           </font>
+                           <padding>
+                              <Insets left="20.0" right="20.0" />
+                           </padding>
+                        </Label>
+                        <TextField fx:id="labelQuantite" prefHeight="25.0" prefWidth="174.0">
+                           <opaqueInsets>
+                              <Insets left="40.0" />
+                           </opaqueInsets>
+                        </TextField>
+                     </children>
+                  </HBox>
+                  <HBox alignment="CENTER" prefHeight="70.0" prefWidth="200.0">
+                     <children>
                         <Button fx:id="mesRec" mnemonicParsing="false" onAction="#MesLivres" styleClass="btn-menu" stylesheets="@../css/MenuButton.css" text="Retour à la liste des livres">
                            <HBox.margin>
                               <Insets right="70.0" />
                            </HBox.margin>
                         </Button>
-                        <Button mnemonicParsing="false" onAction="#EnvoyerModification" styleClass="btn-menu" stylesheets="@../css/MenuButton.css"  text="Modifier"/>
+                        <Button mnemonicParsing="false" onAction="#EnvoyerModification" styleClass="btn-menu" stylesheets="@../css/MenuButton.css" text="Modifier" />
                      </children>
                      <VBox.margin>
                         <Insets top="40.0" />

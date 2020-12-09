@@ -1,5 +1,7 @@
 package bookstore.model;
 
+import javafx.scene.control.Label;
+
 public class Book {
 int Id;
 String Genre;
@@ -7,13 +9,16 @@ String Titre;
 String Auteur;
 Float Prix;
 int nbrPages;
-public Book(int Id, String Genre , String Titre, String Auteur, Float Prix, int nbrPages) {
+int Quantite;
+
+public Book(int Id, String Genre , String Titre, String Auteur, Float Prix, int nbrPages, int Quantite) {
 	this.Id=Id;
 	this.Genre=Genre;
 	this.Titre=Titre;
 	this.Auteur=Auteur;
 	this.Prix=Prix;
 	this.nbrPages=nbrPages;
+	this.Quantite=Quantite;
 }
 
 
@@ -41,10 +46,15 @@ public int getNbrPages() {
 }
 public Float getPrix() {
 	return Prix;
+	
+}
+
+public int getQuantite() {
+	return Quantite;
 }
 
 public void setId(int id) {
-	this.Id = id;
+	Id = id;
 }
 public void setGenre(String genre) {
 	this.Genre = genre;
@@ -61,10 +71,21 @@ public void setNbrPages(int nbrPages) {
 public void setPrix(float prix) {
 	Prix = prix;
 }
+public void setQuantite(int quantite) {
+	Quantite = quantite;
+}
 
 
 @Override
 	public String toString() {
 		return "livre : { "+ Id + Genre +Titre + Auteur + Prix + nbrPages + "}";
 	}
+
+
+
+
+
+
+
+
 }

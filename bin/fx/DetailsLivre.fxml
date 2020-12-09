@@ -9,7 +9,7 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane id="AnchorPane" fx:id="anchorPane" prefHeight="450.0" prefWidth="732.0" style="-fx-background-color: #B0E0E6;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="fx.ModifierLivreController">
+<AnchorPane id="AnchorPane" fx:id="anchorPane" prefHeight="450.0" prefWidth="732.0" style="-fx-background-color: #B0E0E6;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="fx.DetailsLivreController">
    <children>
       <HBox prefHeight="527.0" prefWidth="744.0" stylesheets="@../css/MenuButton.css">
          <children>
@@ -17,15 +17,10 @@
                <children>
                   <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@../images/adminLogo.png" />
+                        <Image url="@../images/clientLogo.png" />
                      </image>
                   </ImageView>
                   <Label fx:id="username" text="Username" textFill="ORANGE">
-                     <font>
-                        <Font name="Comic Sans MS" size="28.0" />
-                     </font>
-                  </Label>
-                  <Label fx:id="id" text="Id" textFill="ORANGE">
                      <font>
                         <Font name="Comic Sans MS" size="28.0" />
                      </font>
@@ -34,18 +29,14 @@
             </VBox>
             <VBox prefHeight="527.0" prefWidth="507.0">
                <children>
-                  <HBox prefHeight="100.0" prefWidth="200.0">
-                     <children>
-                        <Label text="        Modifier le livre :" textFill="WHITE">
-                           <font>
-                              <Font name="Britannic Bold" size="37.0" />
-                           </font>
-                           <padding>
-                              <Insets left="50.0" top="30.0" />
-                           </padding>
-                        </Label>
-                     </children>
-                  </HBox>
+                  <Label text="   Details du livre :" textFill="WHITE">
+                     <font>
+                        <Font name="Britannic Bold" size="37.0" />
+                     </font>
+                     <padding>
+                        <Insets left="50.0" top="30.0" />
+                     </padding>
+                  </Label>
                   <HBox alignment="CENTER" prefHeight="70.0" prefWidth="200.0">
                      <children>
                         <Label text="Genre :" textFill="ORANGE">
@@ -128,29 +119,12 @@
                   </HBox>
                   <HBox alignment="CENTER" prefHeight="70.0" prefWidth="200.0">
                      <children>
-                        <Label text="Quantite :" textFill="ORANGE">
-                           <font>
-                              <Font name="Britannic Bold" size="25.0" />
-                           </font>
-                           <padding>
-                              <Insets left="20.0" right="20.0" />
-                           </padding>
-                        </Label>
-                        <TextField fx:id="labelQuantite" prefHeight="25.0" prefWidth="174.0">
-                           <opaqueInsets>
-                              <Insets left="40.0" />
-                           </opaqueInsets>
-                        </TextField>
-                     </children>
-                  </HBox>
-                  <HBox alignment="CENTER" prefHeight="70.0" prefWidth="200.0">
-                     <children>
                         <Button fx:id="mesRec" mnemonicParsing="false" onAction="#MesLivres" styleClass="btn-menu" stylesheets="@../css/MenuButton.css" text="Retour à la liste des livres">
                            <HBox.margin>
                               <Insets right="70.0" />
                            </HBox.margin>
                         </Button>
-                        <Button mnemonicParsing="false" onAction="#EnvoyerModification" styleClass="btn-menu" stylesheets="@../css/MenuButton.css" text="Modifier" />
+                        <Button fx:id="stats" mnemonicParsing="false" onAction="#voirStat" styleClass="btn-menu" stylesheets="@../css/MenuButton.css" text="Voir les statistiques" />
                      </children>
                      <VBox.margin>
                         <Insets top="40.0" />

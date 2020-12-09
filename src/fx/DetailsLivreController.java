@@ -2,22 +2,18 @@ package fx;
 
 import java.io.IOException;
 
-import book_store.service.ServiceBook;
-import bookstore.model.Book;
+import javafx.event.ActionEvent;
+import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.stage.Stage;
-import javafx.event.ActionEvent;
-import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.AnchorPane;
-import static java.lang.Float.parseFloat;
-import static java.lang.Integer.parseInt;
+import javafx.stage.Stage;
 
-public class AjouterLivreController {
+public class DetailsLivreController {
 
     @FXML
     private TextField labelTitre;
@@ -32,6 +28,9 @@ public class AjouterLivreController {
     private AnchorPane anchorPane;
 
     @FXML
+    private Button stats;
+
+    @FXML
     private TextField labelnbrPages;
 
     @FXML
@@ -39,11 +38,7 @@ public class AjouterLivreController {
 
     @FXML
     private TextField labelAuteur;
-    
-    @FXML
-    private TextField labelQuantite;
 
-    
     @FXML
     private Label username;
 
@@ -52,9 +47,9 @@ public class AjouterLivreController {
     	 try {
              String user=username.getText();
 
-             FXMLLoader loader=new FXMLLoader(getClass().getResource("MesLivresAdmin.fxml"));
+             FXMLLoader loader=new FXMLLoader(getClass().getResource("MesLivresClient.fxml"));
               Parent root1=(Parent) loader.load();
-              MesLivresAdminController rc = loader.getController();
+              MesLivresClientController rc = loader.getController();
               rc.setUsername(user);
               Stage stage=new Stage();
               stage.setScene(new Scene(root1));
@@ -66,23 +61,22 @@ public class AjouterLivreController {
     }
 
     @FXML
-    void Ajouter(ActionEvent event) {
-    	ServiceBook sb =new ServiceBook();
-		Book b = new Book();
-		b.setGenre(labelGenre.getText());
-		b.setTitre(labelTitre.getText());
-		b.setAuteur(labelAuteur.getText());
-		b.setPrix(parseFloat(labelPrix.getText()));
-		b.setNbrPages(parseInt(labelnbrPages.getText()));
-		b.setQuantite(parseInt(labelQuantite.getText()));
+    void voirStat(ActionEvent event) {
+    	 try {
 
-		sb.ajouterBook(b);
-		MesLivres(event);
+             FXMLLoader loader=new FXMLLoader(getClass().getResource("barchart.fxml"));
+              Parent root1=(Parent) loader.load();
+             barchartController rc = loader.getController();
+             
+              Stage stage=new Stage();
+              stage.setScene(new Scene(root1));
+              stage.show();
+         } catch (IOException ex) {
+             System.err.println(ex);
+         }
     }
-
-	public void setUsername(String user) {
-	      this.username.setText(user);
+    public void setUsername(String user) {
+	      this.labelGenre.setText(user);
 	}
-	
 
 }

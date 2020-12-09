@@ -1,5 +1,8 @@
 package fx;
 
+import static java.lang.Float.parseFloat;
+import static java.lang.Integer.parseInt;
+
 import java.io.IOException;
 
 import book_store.service.ServiceBook;
@@ -37,10 +40,17 @@ public class ModifierLivreController {
 
     @FXML
     private TextField labelAuteur;
+   
+    @FXML
+    private TextField labelQuantite;
 
     
     @FXML
     private Label username;
+    
+   
+
+    
 
     @FXML
     void MesLivres(ActionEvent event) {
@@ -64,17 +74,24 @@ public class ModifierLivreController {
     void EnvoyerModification(ActionEvent event) {
     	ServiceBook sb =new ServiceBook();
 		Book b = new Book();
+		System.out.println(b.getAuteur());
 		b.setGenre(labelGenre.getText());
 		b.setTitre(labelTitre.getText());
 		b.setAuteur(labelAuteur.getText());
-		b.setPrix(labelPrix.getAnchor());
-		b.setNbrPages(labelnbrPages.getAnchor());
-		sb.modifierBook(b,b.getId());
+		b.setPrix(parseFloat(labelPrix.getText()));
+		b.setNbrPages(parseInt(labelnbrPages.getText()));
+		b.setQuantite(parseInt(labelQuantite.getText()));
+		sb.modifierBook(b);
+		
+		MesLivres(event);
     }
 
 	public void setUsername(String user) {
 	      this.username.setText(user);
 	}
+	
+	
+	
 	
 
 }

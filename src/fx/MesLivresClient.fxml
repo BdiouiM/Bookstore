@@ -50,6 +50,7 @@
                                     <TableColumn fx:id="Auteur" prefWidth="66.0" text="Auteur" />
                                     <TableColumn fx:id="Prix" prefWidth="51.0" text="Prix" />
                                     <TableColumn fx:id="Pages" prefWidth="72.0" text="Pages" />
+                                    <TableColumn fx:id="Quantite" prefWidth="72.0" text="Quantite" />
                                 </columns>
                               </TableView>
                            </children>
