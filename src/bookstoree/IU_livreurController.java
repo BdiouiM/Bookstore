@@ -40,7 +40,7 @@ import service.service;
  *
  * @author Pc
  */
-public class IU_ClivraisonController implements Initializable {
+public class IU_livreurController implements Initializable {
     connexion cnx;
     /**
      * Initializes the controller class.
@@ -56,10 +56,7 @@ public class IU_ClivraisonController implements Initializable {
     private TableColumn<livraison, String> nom;
     @FXML
     private TableColumn <livraison, String> adr;
-    @FXML
-    private TableColumn <livraison, String> id_client;
-    @FXML
-    private TableColumn <livraison, String> id_livreur;
+    
     @FXML
    ObservableList<livraison> livraison = FXCollections.observableArrayList();
     
@@ -70,7 +67,7 @@ public class IU_ClivraisonController implements Initializable {
           livraison=loadData(livraison);
           tbl.setItems(livraison);
           //ajouter buton annuler
-           addAnnulerToTableView();
+           addToTableView();
           
    
     }    
@@ -78,15 +75,14 @@ public class IU_ClivraisonController implements Initializable {
         id.setCellValueFactory(new PropertyValueFactory<>("id_livraison"));
            nom.setCellValueFactory(new PropertyValueFactory<>("coords"));
            adr.setCellValueFactory(new PropertyValueFactory<>("adrclient"));
-            id_client.setCellValueFactory(new PropertyValueFactory<>("id_client"));
-             id_livreur.setCellValueFactory(new PropertyValueFactory<>("id_livreur"));
+           
            
            
     } 
       public ObservableList<livraison> loadData(ObservableList<livraison> livraison){
          try{
                 cnx=connexion.getIstance();
-               String req ="select * from livraison";
+               String req ="select id_livraison , coords , adrclient from livraison";
                Statement s= cnx.getConnection().createStatement();
                ResultSet rs = s.executeQuery(req);
                while(rs.next()){
@@ -94,8 +90,7 @@ public class IU_ClivraisonController implements Initializable {
                    l.setId(rs.getInt("id_livraison"));
                    l.setCoords(rs.getString("coords"));
                    l.setAdrClient(rs.getString("adrclient"));
-                   l.setId_client(rs.getInt("id_client"));
-                   l.setId_livreur(rs.getInt("id_livreur"));
+                   
           
                    livraison.add(l);
                }
@@ -136,15 +131,15 @@ public class IU_ClivraisonController implements Initializable {
       }
     
   }
-       public void addAnnulerToTableView(){
+       public void addToTableView(){
         
-        TableColumn<livraison, Void> tableAnnuler = new TableColumn("Annuler");
+        TableColumn<livraison, Void> tableAnnuler = new TableColumn("Traiter");
         Callback<TableColumn<livraison, Void>, TableCell<livraison, Void>> cellFactory = new Callback<TableColumn<livraison, Void>, TableCell<livraison, Void>>() {
             @Override
             public TableCell<livraison, Void> call(final TableColumn<livraison, Void> param) {
                 final TableCell<livraison, Void> cell = new TableCell<livraison, Void>() {
 
-                    private final Button btn = new Button("annuler livraison");
+                    private final Button btn = new Button("accepter livraison");
 
                     {
                         
@@ -153,16 +148,14 @@ public class IU_ClivraisonController implements Initializable {
                             int cu = getTableView().getItems().get(getIndex()).getId();
                              String d = getTableView().getItems().get(getIndex()).getCoords();
                               String t = getTableView().getItems().get(getIndex()).getAdrClient();
-                               int i = getTableView().getItems().get(getIndex()).getId_client();
-                               int j = getTableView().getItems().get(getIndex()).getId_livreur();
+                              
                             livraison r = new livraison();
-                            System.out.println("selected livraison : " + i);
+                            System.out.println("selected livraison : " + cu);
                             r.setId(cu);
                             r.setCoords(d);
                             r.setAdrClient(t);
-                            r.setId_client(i);
-                            r.setId_livreur(j);
-                            annulerButton(r);
+                            
+                            accpeterButton(r);
                         });
                     }
 
@@ -183,7 +176,7 @@ public class IU_ClivraisonController implements Initializable {
        tbl.getColumns().add(tableAnnuler);
          
     }
-    public void annulerButton(livraison r){
+    public void accpeterButton(livraison r){
       
                  try {
             System.out.println("reclamation test");
@@ -198,21 +191,6 @@ public class IU_ClivraisonController implements Initializable {
          
         
        
-    }
-     @FXML
-    private void afficherLivreur(ActionEvent event) {
-        try {
-            
-            FXMLLoader loader=new FXMLLoader(getClass().getResource("IU_livreur.fxml"));
-             
-             Parent root1=(Parent) loader.load();
-             
-             Stage stage=new Stage();
-             stage.setScene(new Scene(root1));
-             stage.show();
-        } catch (IOException ex) {
-            System.err.println(ex);
-        }
     }
    
     

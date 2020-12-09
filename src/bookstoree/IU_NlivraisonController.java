@@ -70,11 +70,11 @@ public class IU_NlivraisonController implements Initializable {
     	service sl =new service();
 		livraison l = new livraison();
                 
-                l.setId(5);
+                l.setId(10);
 		l.setCoords(nom.getText());
                 l.setAdrClient(adr.getText());
-                l.setId_client(7);
-                l.setId_livreur(7);
+                l.setId_client(9);
+                l.setId_livreur(8);
                 sl.ajouter_livraison(l);
 		Meslivraisons(event);
     }

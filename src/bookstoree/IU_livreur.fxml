@@ -12,7 +12,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<HBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="557.0" prefWidth="826.0" stylesheets="@../css/welcome.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="bookstoree.IU_ClivraisonController">
+<HBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="557.0" prefWidth="826.0" stylesheets="@../css/welcome.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="bookstoree.IU_livreurController">
    <children>
       
       <VBox prefHeight="557.0" prefWidth="826.0" style="-fx-background-color: #ADD8E6;">
@@ -27,7 +27,7 @@
                      </HBox.margin>
                   </ImageView>
                
-                  <Label alignment="TOP_CENTER" contentDisplay="TOP" text="Consulter les livraisons" textFill="WHITE">
+                  <Label alignment="TOP_CENTER" contentDisplay="TOP" text="Vos livraisons" textFill="WHITE">
                   <font>
                      <Font name="Comic Sans MS Bold" size="40.0" />
                   </font>
@@ -37,7 +37,7 @@
                </Label>
                   </HBox>
             <HBox alignment="CENTER" prefHeight="50.0" prefWidth="100.0" />
-            <Label text="les livraisons confirmés " textFill="WHITE">
+            <Label text="Livreur : X" textFill="WHITE">
                <font>
                   <Font name="Comic Sans MS" size="25.0" />
                </font>
@@ -48,8 +48,6 @@
             <TableView id="tbl" fx:id="tbl" prefHeight="500.0" prefWidth="749.0">
               <columns>
                 <TableColumn id="id" fx:id="id" prefWidth="106.0" text="livraison N°" />
-                <TableColumn id="id_client" fx:id="id_client" prefWidth="112.0" text="id_client" />
-                <TableColumn id="id_lirveur" fx:id="id_livreur" prefWidth="101.0" text="id_livreur" />
                 <TableColumn id="nom" fx:id="nom" prefWidth="139.0" text="Nom" />
                 <TableColumn id="adr" fx:id="adr" prefWidth="347.0" text="Adresse de livraison" />
               </columns>
@@ -75,7 +73,7 @@
                      <HBox.margin>
                         <Insets left="20.0" />
                      </HBox.margin></Button>
-                     <Button mnemonicParsing="false" prefHeight="44.0" onAction="#afficherLivreur" prefWidth="200.0" styleClass="btn-login" text="Annuler" textFill="RED">
+                     <Button mnemonicParsing="false" prefHeight="44.0" prefWidth="200.0" styleClass="btn-login" text="Annuler" textFill="RED">
                      <font>
                         <Font name="System Bold" size="20.0" />
                      </font>
