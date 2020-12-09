@@ -72,8 +72,16 @@ public class ModifierLivreController {
 
     @FXML
     void EnvoyerModification(ActionEvent event) {
+    	
+        String user=username.getText();
+        int i= parseInt(user);
+    	
+    	
     	ServiceBook sb =new ServiceBook();
 		Book b = new Book();
+		
+		
+		
 		System.out.println(b.getAuteur());
 		b.setGenre(labelGenre.getText());
 		b.setTitre(labelTitre.getText());
@@ -81,7 +89,7 @@ public class ModifierLivreController {
 		b.setPrix(parseFloat(labelPrix.getText()));
 		b.setNbrPages(parseInt(labelnbrPages.getText()));
 		b.setQuantite(parseInt(labelQuantite.getText()));
-		sb.modifierBook(b);
+		sb.modifierBook(b,i);
 		
 		MesLivres(event);
     }
@@ -89,6 +97,8 @@ public class ModifierLivreController {
 	public void setUsername(String user) {
 	      this.username.setText(user);
 	}
+
+	
 	
 	
 	

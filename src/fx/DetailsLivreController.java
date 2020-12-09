@@ -16,13 +16,13 @@ import javafx.stage.Stage;
 public class DetailsLivreController {
 
     @FXML
-    private TextField labelTitre;
+    private Label labelTitre;
 
     @FXML
     private Button mesRec;
 
     @FXML
-    private TextField labelPrix;
+    private Label labelPrix;
 
     @FXML
     private AnchorPane anchorPane;
@@ -31,16 +31,25 @@ public class DetailsLivreController {
     private Button stats;
 
     @FXML
-    private TextField labelnbrPages;
+    private Label labelnbrPages;
 
     @FXML
-    private TextField labelGenre;
+    private Label labelGenre;
 
     @FXML
-    private TextField labelAuteur;
+    private Label labelAuteur;
 
     @FXML
     private Label username;
+    
+    public void setDetails(String s1,String s2,String s3,String s4,String s5)
+    {
+    	this.labelGenre.setText(s1);
+    	this.labelTitre.setText(s2);
+    	this.labelAuteur.setText(s3);
+    	this.labelPrix.setText(s4);
+    	this.labelnbrPages.setText(s5);
+    }
 
     @FXML
     void MesLivres(ActionEvent event) {
@@ -59,7 +68,7 @@ public class DetailsLivreController {
          }
          
     }
-
+   
     @FXML
     void voirStat(ActionEvent event) {
     	 try {
@@ -78,5 +87,21 @@ public class DetailsLivreController {
     public void setUsername(String user) {
 	      this.labelGenre.setText(user);
 	}
-
+    
+    public void setLabelAuteur(String auteur) {
+		this.labelAuteur.setText(auteur);
+	}
+    
+    public void setLabelGenre(String genre) {
+		this.labelGenre.setText(genre);
+	}
+    public void setLabelnbrPages(String nbr) {
+		this.labelnbrPages.setText(nbr);
+	}
+    public void setLabelPrix(String prix) {
+		this.labelPrix.setText(prix);
+	}
+   public void setLabelTitre(String titre) {
+	this.labelTitre.setText(titre); 
+			}
 }

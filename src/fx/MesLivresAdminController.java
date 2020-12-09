@@ -10,6 +10,9 @@ import book_store.service.ServiceBook;
 import bookstore.model.Book;
 
 import javafx.scene.control.TextField;
+
+import static java.lang.Integer.parseInt;
+
 import java.io.IOException;
 import java.net.URL;
 import java.sql.ResultSet;
@@ -126,7 +129,9 @@ public class MesLivresAdminController implements Initializable {
    public void setUsername(String user){
 	      this.username.setText(user);
 	   }
-  
+   public void setId(String id){
+	      this.id.setText(id);
+	   }
   
     public ObservableList<Book> loadData(ObservableList<Book> Books){
         try{
@@ -251,11 +256,13 @@ public class MesLivresAdminController implements Initializable {
     	try { 
     	
             String user=username.getText();
+           
 
             FXMLLoader loader=new FXMLLoader(getClass().getResource("ModifierLivre.fxml"));
          Parent root1=(Parent) loader.load();
          ModifierLivreController rc = loader.getController();
-         rc.setUsername(user);
+         rc.setUsername(i+"");
+
          Stage stage=new Stage();
          stage.setScene(new Scene(root1));
          stage.show();

@@ -113,7 +113,7 @@ e.printStackTrace();		}
 			}	
 		
 	}
-	public void modifierBook(bookstore.model.Book b) {
+	public void modifierBook(bookstore.model.Book b, int i) {
 		
 		 try {
 	            String req= "UPDATE livre SET Genre=? , Titre=? , Auteur=? , Prix=? , nbrPages=? , Quantite=? WHERE Id=?";
@@ -125,7 +125,7 @@ e.printStackTrace();		}
 	             ps.setInt(5, b.getNbrPages());
 	             ps.setInt(6, b.getQuantite());
 
-	             ps.setInt(7, b.getId());
+	             ps.setInt(7, i);
 	             ps.executeUpdate(); 
 	            System.out.println("Livre modifié");
 	        } catch (SQLException ex) {

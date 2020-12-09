@@ -47,11 +47,14 @@
                               <Insets left="20.0" right="20.0" />
                            </padding>
                         </Label>
-                        <TextField fx:id="labelGenre" prefHeight="25.0" prefWidth="174.0">
-                           <opaqueInsets>
-                              <Insets left="40.0" />
-                           </opaqueInsets>
-                        </TextField>
+                        <Label fx:id="labelGenre" text="Genre" textFill="ORANGE">
+                           <font>
+                              <Font name="Britannic Bold" size="25.0" />
+                           </font>
+                           <padding>
+                              <Insets left="20.0" right="20.0" />
+                           </padding>
+                        </Label>
                      </children>
                   </HBox>
                   <HBox alignment="CENTER" prefHeight="70.0" prefWidth="200.0">
@@ -64,16 +67,16 @@
                               <Insets right="20.0" />
                            </HBox.margin>
                         </Label>
-                        <TextField fx:id="labelTitre" prefHeight="25.0" prefWidth="174.0">
-                           <opaqueInsets>
-                              <Insets left="40.0" />
-                           </opaqueInsets>
-                        </TextField>
+                        <Label fx:id="labelTitre" text="Titre " textFill="ORANGE">
+                           <font>
+                              <Font name="Britannic Bold" size="25.0" />
+                           </font>
+                        </Label>
                      </children>
                   </HBox>
                   <HBox alignment="CENTER" prefHeight="70.0" prefWidth="200.0">
                      <children>
-                        <Label text="Auteur" textFill="ORANGE">
+                        <Label text="Auteur :" textFill="ORANGE">
                            <font>
                               <Font name="Britannic Bold" size="25.0" />
                            </font>
@@ -81,11 +84,11 @@
                               <Insets right="20.0" />
                            </HBox.margin>
                         </Label>
-                        <TextField fx:id="labelAuteur" prefHeight="27.0" prefWidth="174.0">
-                           <opaqueInsets>
-                              <Insets left="40.0" />
-                           </opaqueInsets>
-                        </TextField>
+                        <Label fx:id="labelAuteur" text="Auteur" textFill="ORANGE">
+                           <font>
+                              <Font name="Britannic Bold" size="25.0" />
+                           </font>
+                        </Label>
                      </children>
                   </HBox>
                   <HBox alignment="CENTER" prefHeight="70.0" prefWidth="200.0">
@@ -98,7 +101,14 @@
                               <Insets right="20.0" />
                            </padding>
                         </Label>
-                        <TextField fx:id="labelPrix" prefHeight="27.0" prefWidth="174.0" />
+                        <Label fx:id="labelPrix" text="Prix" textFill="ORANGE">
+                           <font>
+                              <Font name="Britannic Bold" size="25.0" />
+                           </font>
+                           <padding>
+                              <Insets right="20.0" />
+                           </padding>
+                        </Label>
                      </children>
                      <VBox.margin>
                         <Insets />
@@ -114,7 +124,14 @@
                               <Insets right="20.0" />
                            </padding>
                         </Label>
-                        <TextField fx:id="labelnbrPages" prefHeight="27.0" prefWidth="174.0" />
+                        <Label fx:id="labelnbrPages" text="Nombre " textFill="ORANGE">
+                           <font>
+                              <Font name="Britannic Bold" size="25.0" />
+                           </font>
+                           <padding>
+                              <Insets right="20.0" />
+                           </padding>
+                        </Label>
                      </children>
                   </HBox>
                   <HBox alignment="CENTER" prefHeight="70.0" prefWidth="200.0">

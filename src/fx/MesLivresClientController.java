@@ -15,6 +15,9 @@ import java.net.URL;
 import java.sql.ResultSet;
 import java.sql.Statement;
 import java.util.ResourceBundle;
+
+import com.sun.webkit.UIClient;
+
 import javafx.animation.Interpolator;
 import javafx.animation.KeyFrame;
 import javafx.animation.KeyValue;
@@ -161,7 +164,15 @@ public class MesLivresClientController implements Initializable {
 
                     {
                             btn.setOnAction((ActionEvent event) -> {
-                            DetailsButton(event);
+                           String s1=getTableView().getItems().get(getIndex()).getGenre();
+                           String s2=getTableView().getItems().get(getIndex()).getTitre();
+                           String s3=getTableView().getItems().get(getIndex()).getAuteur();
+                           float s4a=getTableView().getItems().get(getIndex()).getPrix();
+                           int s5a=getTableView().getItems().get(getIndex()).getNbrPages();
+                           String s4=String.valueOf(s4a);
+                           String s5=String.valueOf(s5a);
+                           
+                            DetailsButton(event,s1,s2,s3,s4,s5);
                         });
                     }
 
@@ -182,14 +193,16 @@ public class MesLivresClientController implements Initializable {
        Table.getColumns().add(tableDetails);
          
     }
-    public void DetailsButton(ActionEvent event){
+    public void DetailsButton(ActionEvent event,String s1,String s2,String s3,String s4,String s5){
     	 try { 
     	
            String user=username.getText();
+           
     	 FXMLLoader loader=new FXMLLoader(getClass().getResource("DetailsLivre.fxml"));
          Parent root1=(Parent) loader.load();
          DetailsLivreController rc = loader.getController();
          rc.setUsername(user);
+         rc.setDetails(s1, s2, s3, s4, s5);
          Stage stage=new Stage();
          stage.setScene(new Scene(root1));
          stage.show();
@@ -200,19 +213,21 @@ public class MesLivresClientController implements Initializable {
     }
     @FXML
     private void back(ActionEvent event) throws IOException {
-       FXMLLoader loader=new FXMLLoader(getClass().getResource("IU_Client.fxml"));
-             
-             Parent root=(Parent) loader.load();  
-             Scene scene = back.getScene();
-             root.translateYProperty().set(scene.getHeight());
-             
-             parent.getChildren().add(root);
-             
-             Timeline t = new Timeline();
-            KeyValue kv= new KeyValue(root.translateYProperty(),0,Interpolator.EASE_IN);
-            KeyFrame kf = new KeyFrame(Duration.seconds(1), kv);
-            t.getKeyFrames().add(kf);
-            t.play();
+    	try { 
+    	String user=username.getText();
+
+          FXMLLoader loader=new FXMLLoader(getClass().getResource("IU_Client.fxml"));
+           Parent root1=(Parent) loader.load();
+           IU_ClientController rc = loader.getController();
+           
+           rc.setUsername(user);
+           Stage stage=new Stage();
+           stage.setScene(new Scene(root1));
+           stage.show();
+      } catch (IOException ex) {
+          System.err.println(ex);
+      }
+      
     }
     
 }
