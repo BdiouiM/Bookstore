@@ -40,22 +40,27 @@
                   </HBox>
                   <HBox alignment="CENTER" prefHeight="60.0" prefWidth="200.0">
                      <children>
+                        <Button fx:id="update_btn" mnemonicParsing="false" onAction="#UpdateTable" prefHeight="48.0" prefWidth="173.0" styleClass="btn-menu" stylesheets="@../css/MenuButton.css" text="Update Panier" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="20.0" />
+                     </font>
+                        </Button>
+                     </children>
+                  </HBox>
+                  <HBox alignment="CENTER" prefHeight="60.0" prefWidth="200.0">
+                     <children>
                   <Button fx:id="vider_btn" mnemonicParsing="false" onAction="#Vider" prefHeight="48.0" prefWidth="173.0" styleClass="btn-menu" stylesheets="@../css/MenuButton.css" text="Vider Panier" textFill="WHITE">
                       <font>
                         <Font name="System Bold" size="20.0" />
                      </font>
                   </Button>
-                  </children>
+                     </children>
                   </HBox>
-                  <HBox alignment="CENTER" prefHeight="60.0" prefWidth="200.0">
-                     <children>
-                  <Button fx:id="valider_btn" mnemonicParsing="false" onAction="#Valider" prefHeight="48.0" prefWidth="174.0" styleClass="btn-menu" stylesheets="@../css/MenuButton.css" text="Valider Panier" textFill="WHITE">
-                      <font>
-                        <Font name="System Bold" size="20.0" />
-                     </font>
-                  </Button>
-                  </children>
-                  </HBox>
+            <Button fx:id="valider_btn" mnemonicParsing="false" onAction="#Valider" prefHeight="48.0" prefWidth="174.0" styleClass="btn-menu" stylesheets="@../css/MenuButton.css" text="Valider Panier" textFill="WHITE">
+                <font>
+                  <Font name="System Bold" size="20.0" />
+               </font>
+            </Button>
                </children>
             </VBox>
             <VBox prefHeight="438.0" prefWidth="732.0">

@@ -65,6 +65,8 @@ public class FXMLDocumentController implements Initializable {
     private Button vider_btn;
     @FXML
     private Button valider_btn;
+    @FXML
+    private Button update_btn;
     
 
     @Override
@@ -114,7 +116,7 @@ public class FXMLDocumentController implements Initializable {
             });
                 
                 
-                //add spinner quantité               
+                             
                                 
                 list_panier.add(p);
             }
@@ -148,4 +150,14 @@ public class FXMLDocumentController implements Initializable {
                 float p= sp.PrixLivres();
                 return p;
             }
+
+    @FXML
+    private void UpdateTable(ActionEvent event) {
+        list_panier.removeAll(list_panier);
+        UpdatePanier();
+        list_panier = loadData(list_panier);
+        tab_panier.setItems(list_panier);
+        nbr_total.setText(String.valueOf(UpdateNb()));
+        total_prix.setText(String.valueOf(Updateprix()));
+    }
 }
