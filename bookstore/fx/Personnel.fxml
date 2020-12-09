@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.image.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" prefHeight="500.0" prefWidth="487.0" style="-fx-background-color: #ADD8E6;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="bookstore.fx.PersonnelController">
+   <children>
+      <Button layoutX="54.0" layoutY="423.0" mnemonicParsing="false" onAction="#ModifierPer" prefHeight="48.0" prefWidth="290.0" style="-fx-background-color: #FFA500;" styleClass="btn-menu" stylesheets="@../../css/MenuButton.css" text="Modifier vos informations" textFill="WHITE" />
+      <VBox layoutX="21.0" layoutY="14.0" prefHeight="200.0" prefWidth="100.0" spacing="28.0">
+         <children>
+            <Label text="Poste" textFill="WHITE" />
+            <Label text="CIN" textFill="WHITE" />
+            <Label text="Nom" textFill="WHITE" />
+            <Label text="Prenom" textFill="WHITE" />
+            <Label text="Adresse" textFill="WHITE" />
+            <Label text="Email" textFill="WHITE" />
+            <Label text="Username" textFill="WHITE" />
+         </children>
+      </VBox>
+      <VBox layoutX="344.0" layoutY="53.0" prefHeight="200.0" prefWidth="100.0" />
+      <VBox layoutX="153.0" layoutY="14.0" prefHeight="359.0" prefWidth="216.0" spacing="20.0">
+         <children>
+            <TextField fx:id="tposte" promptText="Poste" />
+            <TextField fx:id="tcin" promptText="CIN" />
+            <TextField fx:id="tnom" promptText="Nom" />
+            <TextField fx:id="tprenom" promptText="Prenom" />
+            <TextField fx:id="tadresse" promptText="Adresse" />
+            <TextField fx:id="temail" promptText="Email" />
+            <TextField fx:id="tusername" promptText="Username" />
+            <TextField fx:id="tpassword" promptText="Password" />
+            <TextField fx:id="tusername1" layoutX="10.0" layoutY="280.0" promptText="Type" />
+         </children>
+      </VBox>
+      <Label layoutX="21.0" layoutY="367.0" text="Type" textFill="WHITE" />
+      <Label layoutX="22.0" layoutY="329.0" text="Password" textFill="WHITE" />
+   </children>
+</AnchorPane>

@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.image.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" prefHeight="448.0" prefWidth="600.0" style="-fx-background-color: #ADD8E6;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="bookstore.fx.AccueilPersonnelController">
+   <children>
+      <VBox layoutX="199.0" layoutY="14.0" prefHeight="319.0" prefWidth="231.0" spacing="15.0">
+         <children>
+            <TextField fx:id="tf1" />
+            <TextField fx:id="tf2" />
+            <TextField fx:id="tf3" />
+            <TextField fx:id="tf5" />
+            <TextField fx:id="tf6" />
+            <TextField fx:id="tf7" />
+            <TextField fx:id="tf8" />
+            <TextField fx:id="tf9" />
+            <TextField fx:id="tf10" />
+         </children>
+      </VBox>
+      <Button layoutX="238.0" layoutY="379.0" mnemonicParsing="false" onAction="#modifier" prefHeight="48.0" prefWidth="125.0" style="-fx-background-color: #FFA500;" styleClass="btn-menu" stylesheets="@../../css/MenuButton.css" text="Modifier" textFill="WHITE" />
+      <VBox layoutX="101.0" layoutY="14.0" prefHeight="339.0" prefWidth="82.0" spacing="23.0">
+         <children>
+            <Label text="Poste" textFill="#fcf9f9" />
+            <Label text="Cin" textFill="#fcfcfc" />
+            <Label text="Nom" textFill="WHITE" />
+            <Label text="Prenom" textFill="WHITE" />
+            <Label text="Adresse" textFill="WHITE" />
+            <Label text="Email" textFill="WHITE" />
+            <Label text="Username" textFill="WHITE" />
+            <Label text="Password" textFill="WHITE" />
+            <Label text="Type" textFill="WHITE" />
+         </children>
+      </VBox>
+   </children>
+</AnchorPane>

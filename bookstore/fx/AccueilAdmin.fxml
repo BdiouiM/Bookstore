@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.image.*?>
+<?import javafx.scene.effect.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="726.0" style="-fx-background-color: #ADD8E6;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="bookstore.fx.AccueilAdminController">
+   <children>
+      <Button layoutX="151.0" layoutY="31.0" mnemonicParsing="false" onAction="#ajouter" prefHeight="48.0" prefWidth="216.0" style="-fx-background-color: #FFA500;" styleClass="btn-menu" stylesheets="@../../css/MenuButton.css" text="Ajouter personnel" textFill="WHITE" />
+      <Button layoutX="194.0" layoutY="98.0" mnemonicParsing="false" onAction="#modifier" prefHeight="48.0" prefWidth="227.0" style="-fx-background-color: #FFA500;" styleClass="btn-menu" stylesheets="@../../css/MenuButton.css" text="Modifier personnel" textFill="WHITE" />
+      <Button layoutX="241.0" layoutY="167.0" mnemonicParsing="false" onAction="#supprimer" prefHeight="48.0" prefWidth="244.0" style="-fx-background-color: #FFA500;" styleClass="btn-menu" stylesheets="@../../css/MenuButton.css" text="Supprimer personnel" textFill="WHITE" />
+      <Button layoutX="302.0" layoutY="237.0" mnemonicParsing="false" onAction="#consulter" prefHeight="48.0" prefWidth="244.0" style="-fx-background-color: #FFA500;" styleClass="btn-menu" stylesheets="@../../css/MenuButton.css" text="Consulter personnel" textFill="WHITE" />
+      <Button layoutX="376.0" layoutY="310.0" mnemonicParsing="false" onAction="#desactiver" prefHeight="48.0" prefWidth="227.0" style="-fx-background-color: #FFA500;" styleClass="btn-menu" stylesheets="@../../css/MenuButton.css" text="Desactiver Client" textFill="WHITE" />
+      <ImageView fitHeight="346.0" fitWidth="128.0" layoutX="14.0" layoutY="31.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../images/adminLogo.png" />
+         </image>
+      </ImageView>
+   </children>
+</AnchorPane>
