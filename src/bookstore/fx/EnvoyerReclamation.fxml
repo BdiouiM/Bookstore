@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" fx:id="parentChildren" prefHeight="557.0" prefWidth="826.0" style="-fx-background-color: #B0E0E6;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="bookstore.fx.EnvoyerReclamationController">
+   <children>
+      <HBox prefHeight="557.0" prefWidth="826.0" stylesheets="@../css/MenuButton.css">
+         <children>
+            <VBox alignment="CENTER" prefHeight="559.0" prefWidth="232.0" style="-fx-background-color: #FFF;">
+               <children>
+                  <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../images/clientLogo.png" />
+                     </image>
+                  </ImageView>
+                  <Label fx:id="username" text="Username" textFill="ORANGE">
+                     <font>
+                        <Font name="Comic Sans MS" size="28.0" />
+                     </font>
+                  </Label>
+               </children>
+            </VBox>
+            <VBox prefHeight="557.0" prefWidth="598.0">
+               <children>
+                  <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="563.0">
+                     <children>
+                        <Label text="Envoyer Une Reclamation" textFill="WHITE">
+                           <font>
+                              <Font name="Britannic Bold" size="37.0" />
+                           </font>
+                           <padding>
+                              <Insets left="50.0" top="30.0" />
+                           </padding>
+                        </Label>
+                        <ImageView fitHeight="55.0" fitWidth="53.0" onMousePressed="#backTo" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../images/back.png" />
+                           </image>
+                           <HBox.margin>
+                              <Insets left="40.0" top="20.0" />
+                           </HBox.margin>
+                        </ImageView>
+                     </children>
+                  </HBox>
+                  <HBox alignment="CENTER" prefHeight="70.0" prefWidth="200.0">
+                     <children>
+                        <Label text="Username :" textFill="ORANGE">
+                           <font>
+                              <Font name="Britannic Bold" size="25.0" />
+                           </font>
+                           <padding>
+                              <Insets left="20.0" right="20.0" />
+                           </padding>
+                        </Label>
+                        <TextField fx:id="labelUsername" prefHeight="25.0" prefWidth="174.0">
+                           <opaqueInsets>
+                              <Insets left="40.0" />
+                           </opaqueInsets>
+                        </TextField>
+                     </children>
+                  </HBox>
+                  <HBox alignment="CENTER" prefHeight="70.0" prefWidth="200.0">
+                     <children>
+                        <Label text="Type:" textFill="ORANGE">
+                           <font>
+                              <Font name="Britannic Bold" size="25.0" />
+                           </font>
+                           <HBox.margin>
+                              <Insets left="10.0" />
+                           </HBox.margin>
+                        </Label>
+                        <ChoiceBox fx:id="labelType" prefHeight="25.0" prefWidth="174.0" style="-fx-background-color: #FFF;">
+                           <HBox.margin>
+                              <Insets left="90.0" />
+                           </HBox.margin></ChoiceBox>
+                     </children>
+                  </HBox>
+                  <HBox alignment="CENTER" prefHeight="70.0" prefWidth="200.0">
+                     <children>
+                        <Label text="Date :" textFill="ORANGE">
+                           <font>
+                              <Font name="Britannic Bold" size="25.0" />
+                           </font>
+                           <HBox.margin>
+                              <Insets right="20.0" />
+                           </HBox.margin>
+                        </Label>
+                        <DatePicker fx:id="labelDateReclamation" style="-fx-background-color: #fff;">
+                           <HBox.margin>
+                              <Insets left="60.0" />
+                           </HBox.margin></DatePicker>
+                     </children>
+                  </HBox>
+                  <HBox alignment="CENTER" prefHeight="70.0" prefWidth="200.0">
+                     <children>
+                        <Label text="Description:" textFill="ORANGE">
+                           <font>
+                              <Font name="Britannic Bold" size="25.0" />
+                           </font>
+                           <padding>
+                              <Insets right="20.0" />
+                           </padding>
+                        </Label>
+                        <TextField fx:id="labelDescription" prefHeight="84.0" prefWidth="174.0" />
+                     </children>
+                     <VBox.margin>
+                        <Insets />
+                     </VBox.margin>
+                  </HBox>
+                  <HBox alignment="CENTER" prefHeight="70.0" prefWidth="200.0">
+                     <children>
+                        <Button fx:id="mesRec" mnemonicParsing="false" onAction="#MesReclamation" style="-fx-background-color: #FFA500;" styleClass="btn-menu" text="Mes réclamations" textFill="WHITE">
+                           <HBox.margin>
+                              <Insets left="50.0" right="70.0" />
+                           </HBox.margin>
+                        </Button>
+                        <Button mnemonicParsing="false" onAction="#EnvoyerReclamation" style="-fx-background-color: #FFA500;" styleClass="btn-menu" text="Envoyer" textFill="WHITE" />
+                     </children>
+                     <VBox.margin>
+                        <Insets top="50.0" />
+                     </VBox.margin>
+                  </HBox>
+               </children>
+            </VBox>
+         </children>
+      </HBox>
+   </children>  
+</AnchorPane>

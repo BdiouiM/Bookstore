@@ -1,0 +1,19 @@
+.btn-menu{
+    -fx-background-color:  #0000FF;
+    -fx-font-family: Tahome;
+    -fx-font-size: 17px;
+    -fx-text-fill: #FFF;
+    -fx-background-radius: 17px;   
+}
+.btn-menu:hover{
+    -fx-cursor:  hand;
+    -fx-border-color: #0000FF;
+    -fx-border-width: 3px;
+    -fx-border-radius: 20px;
+    -fx-background-color:  #FFF;
+    -fx-text-fill:#ffa500;
+    -fx-font-veigth:bold ;
+}
+.btn-menu:pressed{
+    -fx-rotate: 10
+}

@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import javafx.scene.image.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" prefHeight="458.0" prefWidth="600.0" style="-fx-background-color: #ADD8E6;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="bookstore.fx.ModifierAdminController">
+   <children>
+      <VBox layoutX="234.0" layoutY="20.0" prefHeight="256.0" prefWidth="313.0" spacing="15.0">
+         <children>
+            <TextField fx:id="tf1" promptText="Poste" stylesheets="@../../css/Authentification.css" />
+            <TextField fx:id="tf2" promptText="Cin" />
+            <TextField fx:id="tf3" promptText="Nom" />
+            <TextField fx:id="tf5" promptText="Prenom" />
+            <TextField fx:id="tf6" promptText="Adresse" />
+            <TextField fx:id="tf7" promptText="Email" />
+            <TextField fx:id="tf8" promptText="Username" />
+            <TextField fx:id="tf9" promptText="Password" />
+            <TextField fx:id="tf10" promptText="Type" />
+            <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" />
+         </children>
+      </VBox>
+      <Button layoutX="186.0" layoutY="392.0" mnemonicParsing="false" onAction="#modifier" prefHeight="25.0" prefWidth="190.0" styleClass="btn-menu" stylesheets="@../../css/MenuButton.css" text="Modifier" textFill="WHITE" />
+      <VBox layoutX="137.0" layoutY="24.0" prefHeight="284.0" prefWidth="77.0" spacing="20.0">
+         <children>
+            <Label text="Poste" textFill="WHITE">
+               <font>
+                  <Font size="14.0" />
+               </font></Label>
+            <Label text="Cin" textFill="WHITE">
+               <font>
+                  <Font size="14.0" />
+               </font></Label>
+            <Label text="Nom" textFill="WHITE">
+               <font>
+                  <Font size="14.0" />
+               </font></Label>
+            <Label text="Prenom" textFill="WHITE">
+               <font>
+                  <Font size="14.0" />
+               </font></Label>
+            <Label text="Adresse" textFill="WHITE">
+               <font>
+                  <Font size="14.0" />
+               </font></Label>
+            <Label text="Email" textFill="WHITE">
+               <font>
+                  <Font size="14.0" />
+               </font></Label>
+            <Label text="Username" textFill="WHITE">
+               <font>
+                  <Font size="14.0" />
+               </font></Label>
+            <Label text="Password" textFill="WHITE">
+               <font>
+                  <Font size="14.0" />
+               </font></Label>
+            <Label text="Type" textFill="WHITE">
+               <font>
+                  <Font size="14.0" />
+               </font></Label>
+         </children>
+      </VBox>
+      <ImageView fitHeight="229.0" fitWidth="96.0" layoutX="27.0" layoutY="90.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../images/adminLogo.png" />
+         </image>
+      </ImageView>
+   </children>
+</AnchorPane>
