@@ -25,6 +25,7 @@
                         <Font name="Comic Sans MS Bold" size="35.0" />
                      </font>
                   </Label>
+                  <Button mnemonicParsing="false" onAction="#stat" styleClass="btn-menu" stylesheets="@../css/MenuButton.css" text="Statistiques" />
                </children>
             </VBox>
             <VBox prefHeight="438.0" prefWidth="732.0">

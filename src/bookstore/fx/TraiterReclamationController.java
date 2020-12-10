@@ -5,6 +5,7 @@ import bookstore.exception.ReclamationExisteException;
 import bookstore.model.Reclamation;
 import bookstore.service.ServiceAdmin;
 import bookstore.service.ServiceClient;
+import java.io.IOException;
 import java.net.URL;
 import java.sql.ResultSet;
 import java.sql.Statement;
@@ -17,7 +18,10 @@ import javafx.event.Event;
 import javafx.event.EventHandler;
 import javafx.event.EventType;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TableCell;
@@ -25,6 +29,7 @@ import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.text.Text;
+import javafx.stage.Stage;
 import javafx.util.Callback;
 import sun.plugin2.jvm.RemoteJVMLauncher;
 
@@ -234,5 +239,17 @@ public class TraiterReclamationController implements Initializable {
         }
             
         
+    }
+
+    @FXML
+    private void stat(ActionEvent event) throws IOException {
+          String username=user.getText();
+             FXMLLoader loader=new FXMLLoader(getClass().getResource("BarCharReclamation.fxml"));
+             Parent root1=(Parent) loader.load();
+             Stage stage=new Stage();
+             stage.setScene(new Scene(root1));
+             stage.show();
+             BarCharReclamationController bc = loader.getController();
+             bc.setUsername(username);
     }
 }

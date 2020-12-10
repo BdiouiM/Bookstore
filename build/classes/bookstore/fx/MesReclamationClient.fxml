@@ -21,7 +21,7 @@
                               <Image url="@../images/clientLogo.png" />
                            </image>
                         </ImageView>
-                        <Label text="Username" textFill="ORANGE">
+                        <Label fx:id="username" text="Username" textFill="ORANGE">
                            <font>
                               <Font name="Comic Sans MS Bold" size="27.0" />
                            </font>
