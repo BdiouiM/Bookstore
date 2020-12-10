@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.image.*?>
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" prefHeight="542.0" prefWidth="600.0" style="-fx-background-color: #ADD8E6;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="bookstore.fx.AjouteradminnController">
+   <children>
+      <Button layoutX="173.0" layoutY="471.0" mnemonicParsing="false" onAction="#ajouter" prefHeight="25.0" prefWidth="202.0" style="-fx-background-color: #FFA500;" styleClass="btn-menu" stylesheets="@../../css/MenuButton.css" text="Ajouter" />
+      <VBox layoutX="252.0" layoutY="112.0" prefHeight="284.0" prefWidth="296.0" spacing="15.0">
+         <children>
+                 <TextField fx:id="tf1" promptText="Poste" />
+            <TextField fx:id="tf2" promptText="CIN" />
+            <TextField fx:id="tf3" promptText="Nom" />
+            <TextField fx:id="tf5" promptText="Prenom" />
+            <TextField fx:id="tf6" promptText="Adresse" />
+            <TextField fx:id="tf7" promptText="Email" />
+            <TextField fx:id="tf8" promptText="Username" />
+            <TextField fx:id="tf9" promptText="Password" />
+            <TextField fx:id="tf10" promptText="Type" />
+         </children>
+      </VBox>
+      <VBox layoutX="153.0" layoutY="112.0" prefHeight="345.0" prefWidth="109.0" spacing="23.0">
+         <children>
+            <Label text="Poste" textFill="WHITE">
+               <font>
+                  <Font name="System Bold Italic" size="12.0" />
+               </font></Label>
+            <Label text="Cin" textFill="WHITE">
+               <font>
+                  <Font name="System Bold Italic" size="12.0" />
+               </font></Label>
+            <Label text="Nom" textFill="WHITE">
+               <font>
+                  <Font name="System Bold Italic" size="12.0" />
+               </font></Label>
+            <Label text="Prenom" textFill="WHITE">
+               <font>
+                  <Font name="System Bold Italic" size="12.0" />
+               </font></Label>
+            <Label text="Adresse" textFill="WHITE">
+               <font>
+                  <Font name="System Bold Italic" size="12.0" />
+               </font></Label>
+            <Label text="Email" textFill="WHITE">
+               <font>
+                  <Font name="System Bold Italic" size="12.0" />
+               </font></Label>
+            <Label text="Username" textFill="WHITE">
+               <font>
+                  <Font name="System Bold Italic" size="12.0" />
+               </font></Label>
+            <Label text="Password" textFill="WHITE">
+               <font>
+                  <Font name="System Bold Italic" size="12.0" />
+               </font></Label>
+            <Label text="Type" textFill="WHITE">
+               <font>
+                  <Font name="System Bold Italic" size="12.0" />
+               </font></Label>
+         </children>
+      </VBox>
+      <Label layoutX="125.0" layoutY="24.0" text="Ajouter un personnel" textFill="WHITE">
+         <font>
+            <Font name="System Bold Italic" size="36.0" />
+         </font>
+      </Label>
+      <ImageView fitHeight="263.0" fitWidth="83.0" layoutX="32.0" layoutY="145.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../images/adminLogo.png" />
+         </image>
+      </ImageView>
+      <Label layoutX="14.0" layoutY="344.0" textFill="WHITE">
+         <font>
+            <Font name="System Bold Italic" size="18.0" />
+         </font>
+      </Label>
+      <Label layoutX="14.0" layoutY="371.0" text="Administrateur" textFill="WHITE">
+         <font>
+            <Font name="System Bold Italic" size="18.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>

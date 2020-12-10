@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.effect.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="726.0" style="-fx-background-color: #ADD8E6;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="bookstore.fx.AccueilAdminController">
+   <children>
+      <Button layoutX="199.0" layoutY="30.0" mnemonicParsing="false" onAction="#ajouter" prefHeight="48.0" prefWidth="216.0" style="-fx-background-color: #FFA500;" styleClass="btn-menu" stylesheets="@../../css/MenuButton.css" text="Ajouter personnel" textFill="WHITE" />
+      <Button layoutX="238.0" layoutY="100.0" mnemonicParsing="false" onAction="#modifier" prefHeight="48.0" prefWidth="227.0" style="-fx-background-color: #FFA500;" styleClass="btn-menu" stylesheets="@../../css/MenuButton.css" text="Modifier personnel" textFill="WHITE" />
+      <Button layoutX="282.0" layoutY="169.0" mnemonicParsing="false" onAction="#supprimer" prefHeight="48.0" prefWidth="244.0" style="-fx-background-color: #FFA500;" styleClass="btn-menu" stylesheets="@../../css/MenuButton.css" text="Supprimer personnel" textFill="WHITE" />
+      <Button layoutX="343.0" layoutY="239.0" mnemonicParsing="false" onAction="#consulter" prefHeight="48.0" prefWidth="244.0" style="-fx-background-color: #FFA500;" styleClass="btn-menu" stylesheets="@../../css/MenuButton.css" text="Consulter personnel" textFill="WHITE" />
+      <Button layoutX="397.0" layoutY="315.0" mnemonicParsing="false" onAction="#desactiver" prefHeight="48.0" prefWidth="227.0" style="-fx-background-color: #FFA500;" styleClass="btn-menu" stylesheets="@../../css/MenuButton.css" text="Desactiver Client" textFill="WHITE" />
+      <ImageView fitHeight="346.0" fitWidth="128.0" layoutX="58.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../images/adminLogo.png" />
+         </image>
+      </ImageView>
+      <Label graphicTextGap="5.0" layoutX="14.0" layoutY="337.0" prefHeight="53.0" prefWidth="267.0" text="Administrateur" textFill="WHITE">
+         <font>
+            <Font name="System Bold Italic" size="36.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>
