@@ -61,15 +61,15 @@ public class ClientEchangeController implements Initializable {
            echanges=loadData(echanges);
     
            //addValiderToTableView();
-           addAnnulerToTableView();
+           //addAnnulerToTableView();
           //ajouter items dans le tableau
          
            TableC.setItems(echanges);
            
         //String user =username.getText();
-        String cin =CIN.getText();
+       // String cin =CIN.getText();
         //String cin=getCIN1();
-        System.out.println("user:"+username.getText()+"  cin:"+cin);
+        System.out.println("user:"+username.getText());
     }
     
 public void setUsername(String username){
@@ -250,56 +250,56 @@ public void setUsername(String username){
     } 
     
     
-public void addAnnulerToTableView(){
-        
-       TableColumn<Echange, Void> tableAnnuler = new TableColumn(" Free Echange");
-        Callback<TableColumn<Echange, Void>, TableCell<Echange, Void>> cellFactory = new Callback<TableColumn<Echange, Void>, TableCell<Echange, Void>>() {
-            @Override
-            public TableCell<Echange, Void> call(final TableColumn<Echange, Void> param) {
-                final TableCell<Echange, Void> cell = new TableCell<Echange, Void>() {
-
-                    private final Button btn = new Button("Send Request to Book owner");
-
-                    {
-                        
-                        
-                        btn.setOnAction((ActionEvent event) -> {
-                            String cu = getTableView().getItems().get(getIndex()).getIdentifiantechange();
-                             String d = getTableView().getItems().get(getIndex()).getCIN1();
-                              String t = getTableView().getItems().get(getIndex()).getCIN2();
-                              String y = getTableView().getItems().get(getIndex()).getTitre1();
-                              String z = getTableView().getItems().get(getIndex()).getTitre2();
-                              String x = getTableView().getItems().get(getIndex()).getStatutEchange();
-                              
-                            Echange e = new Echange();
-                            System.out.println("selected echange : " + cu);
-                            e.setIdentifiantechange(cu);
-                            e.setCIN1(d);
-                            e.setCIN2(t);
-                            e.setTitre1(y);
-                            e.setTitre2(z);
-                            e.setStatutEchange(x);
-                            freeEchange(e);
-                        });
-                    }
-
-                    @Override
-                    public void updateItem(Void item, boolean empty) {
-                        super.updateItem(item, empty);
-                        if (empty) {
-                            setGraphic(null);
-                        } else {
-                            setGraphic(btn);
-                        }
-                    }
-                };
-                return cell;
-            }
-        };
-       tableAnnuler.setCellFactory(cellFactory);
-       TableC.getColumns().add(tableAnnuler);
-        };    
-    
+      /*public void addAnnulerToTableView(){
+      
+      TableColumn<Echange, Void> tableAnnuler = new TableColumn(" Free Echange");
+      Callback<TableColumn<Echange, Void>, TableCell<Echange, Void>> cellFactory = new Callback<TableColumn<Echange, Void>, TableCell<Echange, Void>>() {
+      @Override
+      public TableCell<Echange, Void> call(final TableColumn<Echange, Void> param) {
+      final TableCell<Echange, Void> cell = new TableCell<Echange, Void>() {
+      
+      private final Button btn = new Button("Send Request to Book owner");
+      
+      {
+      
+      
+      btn.setOnAction((ActionEvent event) -> {
+      String cu = getTableView().getItems().get(getIndex()).getIdentifiantechange();
+      String d = getTableView().getItems().get(getIndex()).getCIN1();
+      String t = getTableView().getItems().get(getIndex()).getCIN2();
+      String y = getTableView().getItems().get(getIndex()).getTitre1();
+      String z = getTableView().getItems().get(getIndex()).getTitre2();
+      String x = getTableView().getItems().get(getIndex()).getStatutEchange();
+      
+      Echange e = new Echange();
+      System.out.println("selected echange : " + cu);
+      e.setIdentifiantechange(cu);
+      e.setCIN1(d);
+      e.setCIN2(t);
+      e.setTitre1(y);
+      e.setTitre2(z);
+      e.setStatutEchange(x);
+      freeEchange(e);
+      });
+      }
+      
+      @Override
+      public void updateItem(Void item, boolean empty) {
+      super.updateItem(item, empty);
+      if (empty) {
+      setGraphic(null);
+      } else {
+      setGraphic(btn);
+      }
+      }
+      };
+      return cell;
+      }
+      };
+      tableAnnuler.setCellFactory(cellFactory);
+      TableC.getColumns().add(tableAnnuler);
+      };
+      */
     public void freeEchange(Echange e){
         System.out.println("echange test");
         ServiceClient sa=new ServiceClient();

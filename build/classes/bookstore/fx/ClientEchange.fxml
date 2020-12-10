@@ -18,7 +18,7 @@
             <Font name="Arial Black" size="26.0" />
          </font>
       </Text>
-      <TableView fx:id="TableC" layoutX="7.0" layoutY="100.0" prefHeight="396.0" prefWidth="1053.0" stylesheets="@../css/TableView.css">
+      <TableView fx:id="TableC" layoutX="54.0" layoutY="95.0" prefHeight="396.0" prefWidth="742.0" stylesheets="@../css/TableView.css">
         <columns>
           <TableColumn fx:id="tableIdentifiantechange" prefWidth="145.0" text="Identifiantechange" />
           <TableColumn fx:id="tableCIN1" minWidth="5.0" prefWidth="101.0" text="CIN1" />
@@ -34,7 +34,5 @@
          </font>
       </Text>
       <Label fx:id="username" layoutX="379.0" layoutY="43.0" text="username" />
-      <Text layoutX="453.0" layoutY="56.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Avec CIN;" />
-      <Label fx:id="CIN" layoutX="533.0" layoutY="43.0" text="CIN" />
    </children>
 </AnchorPane>

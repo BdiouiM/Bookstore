@@ -67,11 +67,13 @@ public class GererPanierController implements Initializable {
     private Button valider_btn;
     @FXML
     private Button update_btn;
+    @FXML
+    private Label username;
     
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-               
+              
        UpdatePanier();
         list_panier = loadData(list_panier);
         tab_panier.setItems(list_panier);
@@ -160,4 +162,8 @@ public class GererPanierController implements Initializable {
         nbr_total.setText(String.valueOf(UpdateNb()));
         total_prix.setText(String.valueOf(Updateprix()));
     }
+    
+     public void setUsername(String user) {
+	      this.username.setText(user);
+	}
 }

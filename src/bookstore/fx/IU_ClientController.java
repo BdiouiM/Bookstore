@@ -94,9 +94,11 @@ public class IU_ClientController implements Initializable {
 
     @FXML
     private void IU_Panier(ActionEvent event) throws IOException {
+        String user=username.getText();
         FXMLLoader loader=new FXMLLoader(getClass().getResource("GererPanier.fxml"));
         Parent root=(Parent) loader.load();
-       
+        GererPanierController cc = loader.getController();
+        cc.setUsername(user);
         Stage stage=new Stage();
         stage.setScene(new Scene(root));
         stage.show();

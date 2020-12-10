@@ -241,7 +241,7 @@ public void addValiderToTableView(){
 
                     {
                         
-                        
+                            
                         btn.setOnAction((ActionEvent event) -> {
                             String cu = getTableView().getItems().get(getIndex()).getIdentifiantechange();
                              String d = getTableView().getItems().get(getIndex()).getCIN1();
@@ -261,7 +261,17 @@ public void addValiderToTableView(){
                             AnnulerEchangec(e);
                         });
                     }
-
+                     {
+                        String cssButton="-fx-cursor:  hand;\n" +
+                    "    -fx-border-color: #ffa500;\n" +
+                    "    -fx-border-width: 3px;\n" +
+                    "    -fx-border-radius: 20px;\n" +
+                    "    -fx-background-color:  #FFF;\n" +
+                    "    -fx-text-fill:#ffa500;\n" +
+                    "    -fx-font-veigth:bold ;"
+                            + "";
+                        this.btn.setStyle(cssButton);
+                     }
                     @Override
                     public void updateItem(Void item, boolean empty) {
                         super.updateItem(item, empty);

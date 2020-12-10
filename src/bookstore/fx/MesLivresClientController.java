@@ -163,7 +163,8 @@ public class MesLivresClientController implements Initializable {
                     private final Button btn = new Button("Voir plus..");
 
                     {
-                            btn.setOnAction((ActionEvent event) -> {
+                          
+                        btn.setOnAction((ActionEvent event) -> {
                            String s1=getTableView().getItems().get(getIndex()).getGenre();
                            String s2=getTableView().getItems().get(getIndex()).getTitre();
                            String s3=getTableView().getItems().get(getIndex()).getAuteur();
@@ -171,7 +172,7 @@ public class MesLivresClientController implements Initializable {
                            int s5a=getTableView().getItems().get(getIndex()).getNbrPages();
                            String s4=String.valueOf(s4a);
                            String s5=String.valueOf(s5a);
-                           
+                         
                             DetailsButton(event,s1,s2,s3,s4,s5);
                         });
                     }

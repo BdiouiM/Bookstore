@@ -77,5 +77,17 @@ public class UI_BuisnessToCustomerController implements Initializable {
              stage.show();
         
     }
+
+    @FXML
+    private void UI_ConculterLivre(ActionEvent event) throws IOException {
+          String u = username.getText();
+         FXMLLoader loader=new FXMLLoader(getClass().getResource("MesLivresAdmin.fxml"));
+             Parent root1=(Parent) loader.load();
+             MesLivresAdminController cr = loader.getController();
+             cr.setUsername(u);
+             Stage stage=new Stage();
+             stage.setScene(new Scene(root1));
+             stage.show();
+    }
     
 }

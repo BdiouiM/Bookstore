@@ -10,6 +10,7 @@ import bookstore.model.Livre;
 import bookstore.model.Panier;
 import bookstore.model.Client;
 import bookstore.connexion.bookstoreConnexion;
+import bookstore.model.Administrateur;
 import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -33,6 +34,26 @@ public class ServicePanier implements InterfacePanier{
     public ServicePanier(){
         cnx = bookstoreConnexion.getIstance();
        }
+    
+     public  int getID(Client c)
+   { 
+         int id=0;
+         try {
+            String req1= "SELECT * FROM client";
+            Statement s= cnx.getConnection().createStatement();
+            
+            ResultSet rs = s.executeQuery(req1);
+            while(rs.next())
+            {
+                //Client cc = new Client();
+                if((rs.getString("UsernameClient")).equals(c.getUsername()));
+                  id = rs.getInt("Identifiant");
+            }
+        } catch (SQLException ex) {
+            System.err.println("erreur dans get ID "+ex);
+        }
+       return id;
+   }
 
 @Override
     public void ajouterLivrePanier(Livre l,Client c) {
@@ -41,7 +62,8 @@ public class ServicePanier implements InterfacePanier{
             PreparedStatement ps= cnx.getConnection().prepareStatement(req);
             ps.setString(1, l.getTitre());
             ps.setFloat(2, l.getPrix());
-            ps.setInt(3, c.getId_client());
+            int id = getID(c);
+            ps.setInt(3, id);
             ps.setInt(4, l.getIdentifiant());
             ps.setFloat(5, l.getPrix()*1);
             ps.executeUpdate();
@@ -60,7 +82,7 @@ public class ServicePanier implements InterfacePanier{
             PreparedStatement ps= cnx.getConnection().prepareStatement(req1);
             ps.setInt(1, quantite);
             ps.setInt(2, l.getIdentifiant());
-            ps.setInt(3, c.getId_client());
+            ps.setInt(3, getID(c));
             ps.executeUpdate();
             System.out.println("Quantité mise à jour");
         } catch (SQLException ex) {
@@ -75,8 +97,9 @@ public class ServicePanier implements InterfacePanier{
         try {
             String req1= "DELETE FROM panier WHERE id_livre=? AND id_client=?";
             PreparedStatement ps= cnx.getConnection().prepareStatement(req1);
+            int id = getID(c);
             ps.setInt(1, l.getIdentifiant());
-            ps.setInt(2, c.getId_client());
+            ps.setInt(2, id);
             ps.executeUpdate();
             System.out.println("Livre supprimé du panier");
         } catch (SQLException ex) {
@@ -101,8 +124,7 @@ public class ServicePanier implements InterfacePanier{
     @Override
     public void ValiderCommande() {
 
-            System.out.println("Commande validée");
-            JOptionPane.showMessageDialog(null, "Commande validée");
+           NotificationAPI.notifConfirm("Panier", "Panier payé");
 
     }
 
@@ -112,7 +134,7 @@ public class ServicePanier implements InterfacePanier{
     public List<Panier> afficher(Client c) {
         List<Panier> liste = new ArrayList<>();
         try {
-            String req= "select * from panier WHERE id_client='"+c.getId_client()+"'";
+            String req= "select * from panier WHERE id_client='"+getID(c)+"'";
             PreparedStatement ps = cnx.getConnection().prepareStatement(req);
             ResultSet rs = ps.executeQuery();
             while(rs.next())
@@ -179,7 +201,7 @@ public class ServicePanier implements InterfacePanier{
             PreparedStatement ps= cnx.getConnection().prepareStatement(req1);
             ps.setFloat(1, quant*l.getPrix() );
             ps.setInt(2, l.getIdentifiant());
-            ps.setInt(3, c.getId_client());
+            ps.setInt(3, getID(c));
             ps.executeUpdate();
             System.out.println("Prix total mise à jour");
         } catch (SQLException ex) {

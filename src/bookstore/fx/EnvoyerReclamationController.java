@@ -71,7 +71,10 @@ public class EnvoyerReclamationController {
     private void EnvoyerReclamation(ActionEvent event) {
        if("".equals(labelDescription.getText())) 
           alertDescription(event);
-      else    
+      else   
+          if(labelDateReclamation==null)
+              System.out.println("");
+       else
       {  try {
             ServiceClient sc =new ServiceClient();
             Reclamation r = new Reclamation();
@@ -122,7 +125,15 @@ public class EnvoyerReclamationController {
        parentChildren.getChildren().removeAll();
        parentChildren.getChildren().setAll(root);
     }
-
+  public void alertDate(ActionEvent event)
+    {
+        Alert a = new Alert(Alert.AlertType.INFORMATION);
+        a.setTitle("Reclamation");
+         a.setHeaderText("Reclamation Invalid");
+          a.setContentText("Veuillez remplir la date");
+          a.showAndWait();
+    }
+       
     @FXML
     private void backTo(MouseEvent event) throws IOException {
         FXMLLoader loader=new FXMLLoader(getClass().getResource("IU_Client.fxml"));

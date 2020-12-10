@@ -25,6 +25,7 @@
                         <Font name="Comic Sans MS" size="28.0" />
                      </font>
                   </Label>
+                  <Button fx:id="mesRec" mnemonicParsing="false" onAction="#MesLivres" styleClass="btn-menu" stylesheets="@../css/MenuButton.css" text="Retour à la liste des livres" />
                </children>
             </VBox>
             <VBox prefHeight="527.0" prefWidth="507.0">
@@ -134,14 +135,17 @@
                         </Label>
                      </children>
                   </HBox>
-                  <HBox alignment="CENTER" prefHeight="70.0" prefWidth="200.0">
+                  <HBox alignment="CENTER_LEFT" prefHeight="70.0" prefWidth="200.0">
                      <children>
-                        <Button fx:id="mesRec" mnemonicParsing="false" onAction="#MesLivres" styleClass="btn-menu" stylesheets="@../css/MenuButton.css" text="Retour à la liste des livres">
+                        <Button fx:id="AjouterPanier" mnemonicParsing="false" styleClass="btn-menu" stylesheets="@../css/MenuButton.css" text="Ajouter Panier">
                            <HBox.margin>
-                              <Insets right="70.0" />
+                              <Insets left="45.0" />
                            </HBox.margin>
                         </Button>
-                        <Button fx:id="stats" mnemonicParsing="false" onAction="#voirStat" styleClass="btn-menu" stylesheets="@../css/MenuButton.css" text="Voir les statistiques" />
+                        <Button fx:id="stats" mnemonicParsing="false" onAction="#voirStat" styleClass="btn-menu" stylesheets="@../css/MenuButton.css" text="Voir les statistiques">
+                           <HBox.margin>
+                              <Insets left="45.0" />
+                           </HBox.margin></Button>
                      </children>
                      <VBox.margin>
                         <Insets top="40.0" />

@@ -1,5 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TextField?>
@@ -7,36 +11,36 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #B0E0E6;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="bookstore.fx.PointerEchangeController">
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #B0E0E6;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="bookstore.fx.PointerEchangeController">
    <children>
-      <Text fill="WHITE" layoutX="149.0" layoutY="38.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Pointer sur un echange">
+      <Text fill="WHITE" layoutX="123.0" layoutY="48.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Pointer sur un echange">
          <font>
-            <Font name="Arial" size="26.0" />
+            <Font name="Arial" size="38.0" />
          </font>
       </Text>
-      <Label layoutX="24.0" layoutY="181.0" text="CIN ">
+      <Label layoutX="132.0" layoutY="177.0" text="CIN  :" textFill="#ff7f00">
          <font>
-            <Font size="26.0" />
+            <Font name="System Bold" size="33.0" />
          </font>
       </Label>
-      <Label layoutX="24.0" layoutY="103.0" text="ID Echange">
+      <Label layoutX="24.0" layoutY="103.0" text="ID Echange :" textFill="#ff7f00">
          <font>
-            <Font size="26.0" />
+            <Font name="Comic Sans MS" size="33.0" />
          </font>
       </Label>
-      <Label layoutX="24.0" layoutY="269.0" text="Titre">
+      <Label layoutX="92.0" layoutY="246.0" text="Titre :" textFill="#ff7f00">
          <font>
-            <Font name="Arial" size="26.0" />
+            <Font name="Comic Sans MS" size="37.0" />
          </font>
       </Label>
       <TextField fx:id="Titre2" layoutX="245.0" layoutY="272.0" />
-      <Button fx:id="Envoyer" layoutX="108.0" layoutY="347.0" mnemonicParsing="false" onAction="#modifierEchange" text="Envoyer" />
-      <Label fx:id="Identifiantechange" layoutX="256.0" layoutY="103.0" text="id" textFill="#ff0707">
+      <Button fx:id="Envoyer" layoutX="238.0" layoutY="330.0" mnemonicParsing="false" onAction="#modifierEchange" styleClass="btn-menu" stylesheets="@../css/MenuButton.css" text="Envoyer" />
+      <Label fx:id="Identifiantechange" layoutX="256.0" layoutY="103.0" text="id">
          <font>
             <Font size="32.0" />
          </font>
       </Label>
-      <Label fx:id="idCIN" layoutX="256.0" layoutY="177.0" text="id" textFill="#ff0707">
+      <Label fx:id="idCIN" layoutX="256.0" layoutY="177.0" text="id">
          <font>
             <Font size="32.0" />
          </font>

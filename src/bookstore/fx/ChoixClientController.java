@@ -60,6 +60,7 @@ public class ChoixClientController implements Initializable {
 
       } catch(Exception e) {
             System.err.println("erreur dans le bouton1" + e.getMessage());
+            e.printStackTrace();
       }
     }
     @FXML

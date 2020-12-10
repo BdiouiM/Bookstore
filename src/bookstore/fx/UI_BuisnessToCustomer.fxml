@@ -1,5 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.image.Image?>
@@ -9,7 +14,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane id="AnchorPane" prefHeight="557.0" prefWidth="826.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="bookstore.fx.UI_BuisnessToCustomerController">
+<AnchorPane id="AnchorPane" prefHeight="557.0" prefWidth="826.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="bookstore.fx.UI_BuisnessToCustomerController">
    <children>
       <HBox layoutX="1.0" layoutY="4.0" prefHeight="551.0" prefWidth="826.0">
          <children>
@@ -31,7 +36,7 @@
                   <HBox prefHeight="93.0" prefWidth="672.0" />
                   <HBox alignment="CENTER" prefHeight="83.0" prefWidth="400.0">
                      <children>
-                        <Button mnemonicParsing="false" styleClass="btn-menu" stylesheets="@../css/MenuButton.css" text="Consulter Livre" />
+                        <Button mnemonicParsing="false" onAction="#UI_ConculterLivre" styleClass="btn-menu" stylesheets="@../css/MenuButton.css" text="Consulter Livre" />
                      </children>
                   </HBox>
                   <HBox alignment="CENTER" prefHeight="80.0" prefWidth="400.0">

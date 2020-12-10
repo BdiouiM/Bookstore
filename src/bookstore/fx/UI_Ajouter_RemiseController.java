@@ -7,6 +7,7 @@ package bookstore.fx;
 
 import bookstore.service.ServiceUser;
 import bookstore.model.Remise;
+import bookstore.service.NotificationAPI;
 import java.net.URL;
 import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
@@ -54,6 +55,7 @@ public class UI_Ajouter_RemiseController implements Initializable {
         r.setIdLivre(idint);
         r.setPourcentage(floatval);
         s.ajouterRemise(r);
+        NotificationAPI.notifInfo("Remise", "Remise ajoutée");
     }
     
 }

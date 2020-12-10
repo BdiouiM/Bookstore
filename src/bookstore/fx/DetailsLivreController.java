@@ -1,5 +1,9 @@
 package bookstore.fx;
 
+import bookstore.model.Client;
+import bookstore.model.Livre;
+import bookstore.service.NotificationAPI;
+import bookstore.service.ServicePanier;
 import java.io.IOException;
 
 import javafx.event.ActionEvent;
@@ -41,6 +45,8 @@ public class DetailsLivreController {
 
     @FXML
     private Label username;
+    @FXML
+    private Button AjouterPanier;
     
     public void setDetails(String s1,String s2,String s3,String s4,String s5)
     {
@@ -49,6 +55,17 @@ public class DetailsLivreController {
     	this.labelAuteur.setText(s3);
     	this.labelPrix.setText(s4);
     	this.labelnbrPages.setText(s5);
+        AjouterPanier.setOnAction((ActionEvent event) -> {
+                   ServicePanier sp=new ServicePanier();
+                   Livre l =new Livre();
+                   
+                       l.setPrix(Float.valueOf(labelPrix.getText()));
+                         l.setTitre(labelTitre.getText());
+                  Client c = new Client();
+                  c.setUsername(username.getText());
+                  sp.ajouterLivrePanier(l, c);
+                  NotificationAPI.notifConfirm("Panier", "Panier envoyé");
+        });
     }
 
     @FXML
@@ -85,7 +102,7 @@ public class DetailsLivreController {
          }
     }
     public void setUsername(String user) {
-	      this.labelGenre.setText(user);
+	      this.username.setText(user);
 	}
     
     public void setLabelAuteur(String auteur) {
@@ -104,4 +121,6 @@ public class DetailsLivreController {
    public void setLabelTitre(String titre) {
 	this.labelTitre.setText(titre); 
 			}
+
+   
 }
