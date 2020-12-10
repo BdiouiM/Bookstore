@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<jnlp spec="1.0" xmlns:jfx="http://javafx.com" href="BookstoreF.jnlp">
+  <information>
+    <title>BookstoreF</title>
+    <vendor>ASUS</vendor>
+    <description>null</description>
+    <offline-allowed/>
+  </information>
+  <resources>
+    <j2se version="1.6+" href="http://java.sun.com/products/autodl/j2se"/>
+    <jar href="BookstoreF.jar" size="3027098" download="eager" />
+    <jar href="lib\controlsfx-8.40.18.jar" size="1436095" download="eager" />
+    <jar href="lib\controlsfx-samples-8.40.18.jar" size="808667" download="eager" />
+    <jar href="lib\dsn.jar" size="18478" download="eager" />
+    <jar href="lib\imap.jar" size="178013" download="eager" />
+    <jar href="lib\javax.mail.jar" size="659033" download="eager" />
+    <jar href="lib\mail.jar" size="507849" download="eager" />
+    <jar href="lib\mailapi.jar" size="270835" download="eager" />
+    <jar href="lib\mysql-connector-java-5.1.23-bin.jar" size="834126" download="eager" />
+    <jar href="lib\pop3.jar" size="43991" download="eager" />
+    <jar href="lib\smtp.jar" size="52787" download="eager" />
+  </resources>
+  <applet-desc  width="800" height="600" main-class="com.javafx.main.NoJavaFXFallback"  name="BookstoreF" >
+    <param name="requiredFXVersion" value="8.0+"/>
+  </applet-desc>
+  <jfx:javafx-desc  width="800" height="600" main-class="bookstore.fx.Bookstore"  name="BookstoreF" />
+  <update check="always"/>
+</jnlp>

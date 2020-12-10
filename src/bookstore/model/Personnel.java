@@ -11,6 +11,7 @@ package bookstore.model;
  */
 public class Personnel extends Utilisateur {
     private float salaire;
+    String poste;
  public Personnel() {
         super();
     }
@@ -21,6 +22,7 @@ public class Personnel extends Utilisateur {
     public Personnel(float salaire, int Identifiant, int CIN, String Nom, String Prenom, String Adresse, String Email, String Username, String Password, String Type,int telephone) {
         super(Identifiant, CIN, Nom, Prenom, Adresse, Email, Username, Password, Type,telephone);
         this.salaire = salaire;
+        this.poste=poste;
     }
 
     public float getSalaire() {
@@ -29,6 +31,14 @@ public class Personnel extends Utilisateur {
 
     public void setSalaire(float salaire) {
         this.salaire = salaire;
+    }
+
+    public String getPoste() {
+        return poste;
+    }
+
+    public void setPoste(String poste) {
+        this.poste = poste;
     }
     
     @Override

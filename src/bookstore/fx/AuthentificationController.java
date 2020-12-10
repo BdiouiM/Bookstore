@@ -84,6 +84,45 @@ public class AuthentificationController implements Initializable {
             System.err.println("erreur dans iu client" + e);
             }
         }
+          else if (sa.btcauthentification(user, pass))
+        {
+            
+             try {
+                 String u=username.getText();
+             FXMLLoader loader=new FXMLLoader(getClass().getResource("UI_BuisnessToCustomer.fxml"));
+             
+             Parent root1=(Parent) loader.load();
+             UI_BuisnessToCustomerController btc = loader.getController();
+             btc.setUser(u);
+            //IU_ClientController iuclient = loader.getController();
+             //iuclient.setUsername(user);
+             Stage stage=new Stage();
+             stage.setScene(new Scene(root1));
+             stage.show();
+
+            } catch(Exception e) {
+            System.err.println("erreur dans iu client" + e);
+            }
+        }
+           else if (sa.livreurauthentification(user, pass))
+        {
+            
+             try {
+                 String u=username.getText();
+             FXMLLoader loader=new FXMLLoader(getClass().getResource("IU_livreur.fxml"));
+             
+             Parent root1=(Parent) loader.load();
+            
+            //IU_ClientController iuclient = loader.getController();
+             //iuclient.setUsername(user);
+             Stage stage=new Stage();
+             stage.setScene(new Scene(root1));
+             stage.show();
+
+            } catch(Exception e) {
+            System.err.println("erreur dans iu livreur" + e);
+            }
+        }
         else
         {System.out.println("n'existe pas");
             alert(event);

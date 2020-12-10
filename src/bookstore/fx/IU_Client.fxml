@@ -39,12 +39,17 @@
             </HBox>
             <HBox alignment="CENTER" prefHeight="70.0" prefWidth="200.0">
                <children>
-                  <Button mnemonicParsing="false" onAction="#IU_Compte" prefHeight="48.0" prefWidth="146.0" styleClass="btn-menu" text="Compte" />
+                  <Button mnemonicParsing="false" onAction="#IU_Compte" prefHeight="48.0" prefWidth="146.0" styleClass="btn-menu" text="Livraison" />
                </children>
             </HBox>
             <HBox alignment="CENTER" prefHeight="70.0" prefWidth="200.0">
                <children>
                   <Button mnemonicParsing="false" onAction="#IU_Echange" prefHeight="48.0" prefWidth="151.0" styleClass="btn-menu" text="Echange" />
+               </children>
+            </HBox>
+            <HBox alignment="CENTER" prefHeight="70.0" prefWidth="200.0">
+               <children>
+                  <Button mnemonicParsing="false" onAction="#IU_Panier" prefHeight="48.0" prefWidth="151.0" styleClass="btn-menu" text="Panier" />
                </children>
             </HBox>
          </children>

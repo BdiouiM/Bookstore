@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.image.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" prefHeight="401.0" prefWidth="858.0" style="-fx-background-color: #ADD8E6;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="bookstore.fx.ConsulteradminController">
+   <children>
+      <TableView fx:id="tab" prefHeight="401.0" prefWidth="779.0" stylesheets="@../../css/TableView.css">
+        <columns>
+          <TableColumn fx:id="tvPoste" prefWidth="75.0" text="Poste" />
+          <TableColumn fx:id="tvCin" prefWidth="75.0" text="CIN" />
+            <TableColumn fx:id="tvNom" prefWidth="75.0" text="Nom" />
+            <TableColumn fx:id="tvPrenom" prefWidth="75.0" text="Prenom" />
+            <TableColumn fx:id="tvAdresse" prefWidth="96.0" text="Adresse" />
+            <TableColumn fx:id="tvEmail" prefWidth="168.0" text="Email" />
+            <TableColumn fx:id="tvUsername" prefWidth="65.0" text="Username" />
+            <TableColumn fx:id="tvPassword" prefWidth="92.0" text="Password" />
+            <TableColumn fx:id="tvType" prefWidth="57.0" text="Type" />
+        </columns>
+      </TableView>
+   </children>
+</AnchorPane>

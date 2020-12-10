@@ -129,7 +129,7 @@ public class VerifierStockController implements Initializable {
                    l.setNbrPages(rs.getInt("nbrPages"));
                    l.setGenre(rs.getString("Genre"));
                    l.setPrix(rs.getFloat("Prix"));
-                   l.setIdentifiant(rs.getInt("Identifiant"));
+                   l.setIdentifiant(rs.getInt("Id"));
                    
                 
                    livres.add(l);

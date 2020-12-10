@@ -10,4 +10,6 @@ public interface AuthentificationInterface {
     public boolean clientAuthentification(String username,String password);
     public boolean adminAuthentification(String username,String password);
     public boolean bibliothecaireAuthentification(String username,String password);
+     public boolean btcauthentification(String username, String password);
+      public boolean livreurauthentification(String username, String password);
 }

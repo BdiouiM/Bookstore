@@ -77,6 +77,17 @@ public class HomeController implements Initializable {
         parentChildren.getChildren().removeAll();
         parentChildren.getChildren().setAll(root);
     }
+
+    @FXML
+    private void visiteur(ActionEvent event) throws IOException {
+          FXMLLoader loader=new FXMLLoader(getClass().getResource("Visiteur.fxml"));
+             
+             Parent root1=(Parent) loader.load();
+          
+             Stage stage=new Stage();
+             stage.setScene(new Scene(root1));
+             stage.show();
+    }
           
     
 }

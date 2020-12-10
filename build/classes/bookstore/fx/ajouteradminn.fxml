@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" prefHeight="483.0" prefWidth="600.0" style="-fx-background-color: #ADD8E6;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="bookstore.fx.AjouteradminnController">
+   <children>
+      <Button layoutX="172.0" layoutY="408.0" mnemonicParsing="false" onAction="#ajouter" prefHeight="25.0" prefWidth="202.0" style="-fx-background-color: #FFA500;" styleClass="btn-menu" stylesheets="@../../css/MenuButton.css" text="Ajouter" />
+      <VBox layoutX="233.0" layoutY="25.0" prefHeight="284.0" prefWidth="296.0" spacing="15.0">
+         <children>
+                 <TextField fx:id="tf1" promptText="Poste" />
+            <TextField fx:id="tf2" promptText="CIN" />
+            <TextField fx:id="tf3" promptText="Nom" />
+            <TextField fx:id="tf5" promptText="Prenom" />
+            <TextField fx:id="tf6" promptText="Adresse" />
+            <TextField fx:id="tf7" promptText="Email" />
+            <TextField fx:id="tf8" promptText="Username" />
+            <TextField fx:id="tf9" promptText="Password" />
+            <TextField fx:id="tf10" promptText="Type" />
+         </children>
+      </VBox>
+      <VBox layoutX="108.0" layoutY="25.0" prefHeight="345.0" prefWidth="109.0" spacing="23.0">
+         <children>
+            <Label text="Poste" textFill="WHITE" />
+            <Label text="Cin" textFill="WHITE" />
+            <Label text="Nom" textFill="WHITE" />
+            <Label text="Prenom" textFill="WHITE" />
+            <Label text="Adresse" textFill="WHITE" />
+            <Label text="Email" textFill="WHITE" />
+            <Label text="Username" textFill="WHITE" />
+            <Label text="Password" textFill="WHITE" />
+            <Label text="Type" textFill="WHITE" />
+         </children>
+      </VBox>
+   </children>
+</AnchorPane>

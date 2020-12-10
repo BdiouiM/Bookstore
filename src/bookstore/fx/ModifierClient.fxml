@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.image.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="506.0" style="-fx-background-color: #ADD8E6;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="bookstore.fx.ModifierClientController">
+   <children>
+      <VBox layoutX="144.0" layoutY="14.0" prefHeight="313.0" prefWidth="282.0" spacing="15.0">
+         <children>
+            <TextField fx:id="tf1" promptText="Cin" />
+            <TextField fx:id="tf2" promptText="Nom" />
+            <TextField fx:id="tf3" promptText="Prenom" />
+            <TextField fx:id="tf5" promptText="Adresse" />
+            <TextField fx:id="tf6" promptText="Email" />
+            <TextField fx:id="tf7" promptText="Username" />
+            <TextField fx:id="tf8" promptText="Password" />
+            <TextField fx:id="tf9" promptText="Type" />
+         </children>
+      </VBox>
+      <Button layoutX="176.0" layoutY="342.0" mnemonicParsing="false" onAction="#modifier" prefHeight="48.0" prefWidth="136.0" style="-fx-background-color: #FFA500;" styleClass="btn-menu" stylesheets="@../../css/MenuButton.css" text="Modifier" textFill="WHITE" />
+      <VBox layoutX="54.0" layoutY="19.0" prefHeight="323.0" prefWidth="96.0" spacing="23.0">
+         <children>
+            <Label text="Cin" textFill="WHITE" />
+            <Label text="Nom" textFill="WHITE" />
+            <Label text="Prenom" textFill="WHITE" />
+            <Label text="Adresse" textFill="WHITE" />
+            <Label text="Email" textFill="WHITE" />
+            <Label text="Username" textFill="WHITE" />
+            <Label text="Password" textFill="WHITE" />
+            <Label text="Type" textFill="WHITE" />
+         </children>
+      </VBox>
+   </children>
+</AnchorPane>

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.image.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" prefHeight="232.0" prefWidth="466.0" style="-fx-background-color: #ADD8E6;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="bookstore.fx.AccueilClientController">
+   <children>
+      <Button layoutX="178.0" layoutY="47.0" mnemonicParsing="false" onAction="#modifier" prefHeight="25.0" prefWidth="149.0" style="-fx-background-color: #FFA500;" styleClass="btn-menu" stylesheets="@../../css/MenuButton.css" text="Modifier" textFill="WHITE" />
+      <Button layoutX="187.0" layoutY="126.0" mnemonicParsing="false" onAction="#desactiver" prefHeight="25.0" prefWidth="149.0" style="-fx-background-color: #FFA500;" styleClass="btn-menu" stylesheets="@../../css/MenuButton.css" text="Désactiver" textFill="WHITE" />
+      <ImageView fitHeight="214.0" fitWidth="134.0" layoutX="14.0" layoutY="8.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../images/clientLogo.png" />
+         </image>
+      </ImageView>
+   </children>
+</AnchorPane>

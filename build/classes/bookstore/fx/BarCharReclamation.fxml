@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.paint.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.chart.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" fx:id="parentChildren" prefHeight="557.0" prefWidth="826.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="bookstore.fx.BarCharReclamationController">
+   <children>
+      <VBox alignment="CENTER" prefHeight="557.0" prefWidth="175.0" style="-fx-background-color: #FFFF;">
+         <children>
+            <ImageView fitHeight="225.0" fitWidth="101.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../images/adminLogo.png" />
+               </image>
+            </ImageView>
+            <Label fx:id="username" text="Username" textFill="#ff7700">
+               <font>
+                  <Font name="Comic Sans MS Bold" size="27.0" />
+               </font>
+            </Label>
+         </children>
+      </VBox>
+      <VBox alignment="CENTER" layoutX="173.0" prefHeight="557.0" prefWidth="772.0" style="-fx-background-color: #ADD8E6;">
+         <children>
+            <Label text="Statistiques des réclamations" textFill="WHITE">
+               <font>
+                  <Font name="Comic Sans MS" size="46.0" />
+               </font>
+            </Label>
+            <BarChart fx:id="barchart" prefHeight="390.0" prefWidth="774.0">
+              <xAxis>
+                <CategoryAxis fx:id="X" label="Username" prefHeight="18.0" prefWidth="691.0" side="BOTTOM">
+                     <tickLabelFont>
+                        <Font size="14.0" />
+                     </tickLabelFont>
+                  </CategoryAxis>
+              </xAxis>
+              <yAxis>
+                <NumberAxis fx:id="Y" label="Statut" prefHeight="349.0" prefWidth="51.0" side="LEFT" tickLabelFill="#ff6c00">
+                     <tickLabelFont>
+                        <Font name="Tahoma" size="12.0" />
+                     </tickLabelFont>
+                  </NumberAxis>
+              </yAxis>
+            </BarChart>
+            <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
+               <children>
+                  <Label prefHeight="51.0" prefWidth="318.0" text="Statut d'une Réclamation :" textFill="WHITE">
+                     <font>
+                        <Font name="Comic Sans MS Bold" size="24.0" />
+                     </font>
+                  </Label>
+                  <Label text="0" textFill="RED">
+                     <font>
+                        <Font size="29.0" />
+                     </font>
+                  </Label>
+                  <Label text="-En cours..">
+                     <font>
+                        <Font size="29.0" />
+                     </font>
+                  </Label>
+                  <Label text="1" textFill="RED">
+                     <font>
+                        <Font size="29.0" />
+                     </font>
+                  </Label>
+                  <Label text="-Annulée..">
+                     <font>
+                        <Font size="29.0" />
+                     </font>
+                  </Label>
+                  <Label text="2" textFill="RED">
+                     <font>
+                        <Font size="29.0" />
+                     </font>
+                  </Label>
+                  <Label text="-Validée..">
+                     <font>
+                        <Font size="29.0" />
+                     </font>
+                  </Label>
+               </children>
+            </HBox>
+         </children>
+      </VBox>
+   </children>
+</AnchorPane>

@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+  <title>
+    Agil GSS
+  </title>
+  <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0, shrink-to-fit=no' name='viewport' />
+  <!--     Fonts and icons     -->
+  <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:400,700|Material+Icons" />
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css">
+  <!-- CSS Files -->
+  <!-- <link href="../assets/css/material-dashboard.css?v=2.1.1" rel="stylesheet" /> -->
+ 
+  <script src="../assets/js/leaflet.js"></script>
+  <style>
+    #map{ height: 550px; }
+  </style>
+</head>
+
+<body class="">
+  <div class="wrapper ">
+    
+    <div class="main-panel" >
+    
+                  <div id="map"></div>
+              
+        </div>
+    
+      </div>
+  <!--   Core JS Files   -->
+  <script src="../assets/js/core/jquery.min.js"></script>
+  <script src="../assets/js/core/popper.min.js"></script>
+  <script src="../assets/js/core/bootstrap-material-design.min.js"></script>
+  <script src="../assets/js/plugins/perfect-scrollbar.jquery.min.js"></script>
+  <!-- Plugin for the momentJs  -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/core-js/2.4.1/core.js"></script>
+  <script src="../assets/demo/demo.js"></script>
+  <script>
+
+      //   function setMarker(){
+      //     map.removeLayer(marker)
+      //  marker = L.marker(coords[i]).addTo(map);
+      //   }
+  
+  
+  
+  var c1= [36.84881541618921, 10.20204166517658];
+  var c2= [36.84778515681963, 10.201945105652044];
+  var c3= [36.84679781189628, 10.201896825889776];
+  var c4= [36.84569025328752, 10.20180563078327];
+  var c5= [36.84468570951236, 10.201757351021001];
+  
+  var c6= [36.843818528631374, 10.201709071258733];
+  var c7= [36.84299140857372, 10.201627213467418];
+  var c8= [36.84260688197756, 10.201618338653816];
+  var c9= [36.84230636669537, 10.201589732219645];
+  var c10= [36.84195433300567, 10.201552181293437];
+  var c11= [36.84147737337563, 10.201509442399924];
+  var c12= [36.84088068730277, 10.201367806423264];
+  var c13= [36.840382678665215, 10.200826000202255];
+  var c14= [36.840253882800106, 10.199919413555222];
+  var c15= [36.839813415210266, 10.199388336170273];
+  var c16= [36.83963309959619, 10.198894809711533];
+  var c17= [36.839615926658375, 10.197741277094678];
+  var c18= [36.83963309959617, 10.19672369279067];
+  var c19= [36.839683667502214, 10.195943746227044];
+  
+  var coords = [c1,c2,c3,c4,c5,c6,c7,c8,c9,c10,c11,c12,c13,c14,c15,c16,c17,c18,c19];
+  
+  
+    // initialize the map
+    var map = L.map('map').setView(coords[6], 14);
+    var icon = L.icon({
+      iconUrl: '../images/booklogo.png',
+      iconSize:     [40, 75], // size of the icon
+      popupAnchor:  [0, -26] // point from which the popup should open relative to the iconAnchor
+    })
+    // load a tile layer
+  var OpenStreetMap_Mapnik = L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+      foo: 'bar',
+    maxZoom: 19,
+    attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+  }).addTo(map);
+  var circle = L.circle([36.83975550865143, 10.195022821426392], {
+      color: 'red',
+      fillColor: '#f03',
+      fillOpacity: 0.2,
+      radius: 100
+  }).addTo(map);
+  var marker = L.marker(c1).addTo(map);
+  marker.bindPopup("<b>livraison n° x </b><br>en cours ");
+  var i=1;
+  
+     var i1 = setInterval(function(){
+          map.removeLayer(marker)
+       marker = L.marker(coords[i]).addTo(map);
+       marker.bindPopup("<b>livraison n° x </b><br>en cours").openPopup();
+       i++;
+      },3000);
+      setTimeout(function(){
+          marker.bindPopup("<b>livraison n° x est arrivé").openPopup();
+          clearInterval(i1); 
+      },54000);
+      
+    </script>
+  </body>
+  </html>

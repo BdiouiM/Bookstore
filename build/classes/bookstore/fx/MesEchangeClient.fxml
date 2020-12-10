@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane id="AnchorPane" prefHeight="557.0" prefWidth="826.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="bookstore.fx.MesEchangeClientController">
+   <children>
+      <TableView fx:id="tableMe" layoutX="14.0" layoutY="72.0" prefHeight="422.0" prefWidth="700.0" stylesheets="@../css/TableView.css">
+        <columns>
+          <TableColumn fx:id="identifiant" prefWidth="75.0" text="Identifiant" />
+          <TableColumn fx:id="cin1" prefWidth="75.0" text="CIN1" />
+            <TableColumn fx:id="cin2" prefWidth="75.0" text="CIN2" />
+            <TableColumn fx:id="titre1" prefWidth="75.0" text="Titre1" />
+            <TableColumn fx:id="titre2" prefWidth="75.0" text="Titre2" />
+            <TableColumn fx:id="statutechange" prefWidth="75.0" text="StatutEchange" />
+        </columns>
+      </TableView>
+      <Label fx:id="username" layoutX="337.0" layoutY="9.0" text="username">
+         <font>
+            <Font name="Comic Sans MS" size="31.0" />
+         </font></Label>
+      <Text fill="#ff6600" layoutX="14.0" layoutY="40.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Mes Echanges En Tanque ">
+         <font>
+            <Font name="Arial" size="26.0" />
+         </font>
+      </Text>
+   </children>
+</AnchorPane>

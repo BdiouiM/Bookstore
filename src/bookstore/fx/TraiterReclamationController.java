@@ -6,6 +6,7 @@ import bookstore.model.Reclamation;
 import bookstore.service.NotificationAPI;
 import bookstore.service.ServiceAdmin;
 import bookstore.service.ServiceClient;
+import java.io.IOException;
 import java.net.URL;
 import java.sql.ResultSet;
 import java.sql.Statement;
@@ -23,8 +24,10 @@ import javafx.event.Event;
 import javafx.event.EventHandler;
 import javafx.event.EventType;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
@@ -35,6 +38,7 @@ import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.text.Text;
+import javafx.stage.Stage;
 import javafx.util.Callback;
 import sun.plugin2.jvm.RemoteJVMLauncher;
 
@@ -69,6 +73,8 @@ public class TraiterReclamationController implements Initializable {
     private TextField chercher;
     @FXML
     private AnchorPane parentChildren;
+    @FXML
+    private Button stat;
     
     @Override
     public void initialize(URL url, ResourceBundle rb) {
@@ -210,7 +216,7 @@ public class TraiterReclamationController implements Initializable {
                      System.out.println("id :"+r.getIdentifiant());
             
             sa.annulerReclamation(r);
-            NotificationAPI.notifConfirm("Réclamation", "Annulée");
+             NotificationAPI.notif("Réclamation", "Annulée");
         } catch (ReclamationExisteException ex) {
             System.err.println("erreur dans l'annulation:  "+ex);      
         }
@@ -281,7 +287,8 @@ public class TraiterReclamationController implements Initializable {
             ServiceAdmin sa=new ServiceAdmin();
                  System.out.println(r.getIdentifiant());
             sa.validerReclamations(r);
-            //sa.SendSMS();
+            sa.SendSMS();
+            //NotificationAPI.notif("Réclamation", "Validée");
             NotificationAPI.notifConfirm("Réclamation", "Validée");
         } catch (ReclamationExisteException ex) {
             System.err.println("erreur dans la validation");      
@@ -298,5 +305,17 @@ public class TraiterReclamationController implements Initializable {
       public void loadPage(Parent root){
        parentChildren.getChildren().removeAll();
        parentChildren.getChildren().setAll(root);
+    }
+
+    @FXML
+    private void stat(ActionEvent event) throws IOException {
+         String username=user.getText();
+             FXMLLoader loader=new FXMLLoader(getClass().getResource("BarCharReclamation.fxml"));
+             Parent root1=(Parent) loader.load();
+             Stage stage=new Stage();
+             stage.setScene(new Scene(root1));
+             stage.show();
+             BarCharReclamationController bc = loader.getController();
+             bc.setUsername(username);
     }
 }

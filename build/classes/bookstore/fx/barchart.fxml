@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.chart.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane prefHeight="276.0" prefWidth="438.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="bookstore.fx.barchartController">
+   <children>
+      <BarChart fx:id="BookChart" prefHeight="338.0" prefWidth="449.0" title="Statistiques des livres par rapport aux prix">
+        <xAxis>
+          <CategoryAxis fx:id="X" label="Titre" side="BOTTOM" />
+        </xAxis>
+        <yAxis>
+          <NumberAxis fx:id="Y" label="Prix" side="LEFT" />
+        </yAxis>
+      </BarChart>
+   </children>
+</AnchorPane>

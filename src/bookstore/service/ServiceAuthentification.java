@@ -8,9 +8,11 @@ package bookstore.service;
 import bookstore.Interface.AuthentificationInterface;
 import bookstore.connexion.bookstoreConnexion;
 import bookstore.model.Administrateur;
+import bookstore.model.BTC;
 import bookstore.model.Bibliothécaire;
 import bookstore.model.Client;
 import bookstore.model.Reclamation;
+import bookstore.model.livreur;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
@@ -90,6 +92,47 @@ public class ServiceAuthentification implements AuthentificationInterface{
             }
         } catch (SQLException ex) {
             System.err.println("erreur authentification bibliothécaire : "+ex);
+        }
+        return false;
+    }
+     @Override
+    public boolean btcauthentification(String username, String password) {
+         try {
+            String req1= "select * from bussinessToCustomer ";
+            Statement s= cnx.getConnection().createStatement();
+            ResultSet rs = s.executeQuery(req1);
+            while(rs.next())
+            {
+                BTC biblio = new BTC();
+                biblio.setUsername(rs.getString("Username"));
+                biblio.setPassword(rs.getString("Password"));
+                if(biblio.getPassword().equals(password)&&biblio.getUsername().equals(username))
+                    return true;
+                
+            }
+        } catch (SQLException ex) {
+            System.err.println("erreur authentification btc : "+ex);
+        }
+        return false;
+    }
+
+    @Override
+    public boolean livreurauthentification(String username, String password) {
+             try {
+            String req1= "select * from livreur ";
+            Statement s= cnx.getConnection().createStatement();
+            ResultSet rs = s.executeQuery(req1);
+            while(rs.next())
+            {
+                livreur liv = new livreur();
+                liv.setUsername(rs.getString("Username"));
+                liv.setPassword(rs.getString("Password"));
+                if(liv.getPassword().equals(password)&&liv.getUsername().equals(username))
+                    return true;
+                
+            }
+        } catch (SQLException ex) {
+            System.err.println("erreur authentification livreur : "+ex);
         }
         return false;
     }

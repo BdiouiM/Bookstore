@@ -5,6 +5,7 @@
  */
 package bookstore.fx;
 
+import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
@@ -54,7 +55,15 @@ public class IU_AdminController implements Initializable {
     }
 
     @FXML
-    private void IU_Livre(ActionEvent event) {
+    private void IU_Livre(ActionEvent event) throws IOException {
+          String user=username.getText();
+        FXMLLoader loader=new FXMLLoader(getClass().getResource("MesLivresAdmin.fxml"));
+        Parent root=(Parent) loader.load();
+        MesLivresAdminController cc = loader.getController();
+        cc.setUsername(user);
+        Stage stage=new Stage();
+        stage.setScene(new Scene(root));
+        stage.show();
     }
 
     @FXML
@@ -62,7 +71,15 @@ public class IU_AdminController implements Initializable {
     }
 
     @FXML
-    private void IU_Echange(ActionEvent event) {
+    private void IU_Echange(ActionEvent event) throws IOException {
+        String user=username.getText();
+        FXMLLoader loader=new FXMLLoader(getClass().getResource("EchangeAdmin.fxml"));
+        Parent root=(Parent) loader.load();
+        //EchangeAdminController ea = loader.getController();
+        
+        Stage stage=new Stage();
+        stage.setScene(new Scene(root));
+        stage.show();
     }
     public void loadPage(Parent root){
        parentChildren.getChildren().removeAll();
