@@ -8,7 +8,7 @@
   </information>
   <resources>
     <j2se version="1.6+" href="http://java.sun.com/products/autodl/j2se"/>
-    <jar href="Bookstore.jar" size="1335734" download="eager" />
+    <jar href="Bookstore.jar" size="1335733" download="eager" />
     <jar href="lib\controlsfx-8.40.18.jar" size="1436095" download="eager" />
     <jar href="lib\controlsfx-samples-8.40.18.jar" size="808667" download="eager" />
     <jar href="lib\dsn.jar" size="18478" download="eager" />
