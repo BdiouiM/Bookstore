@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import javafx.scene.image.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" prefHeight="549.0" prefWidth="600.0" style="-fx-background-color: #ADD8E6;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="bookstore.fx.AccueilPersonnelController">
+   <children>
+      <VBox layoutX="333.0" layoutY="116.0" prefHeight="319.0" prefWidth="231.0" spacing="15.0">
+         <children>
+            <TextField fx:id="tf1" />
+            <TextField fx:id="tf2" />
+            <TextField fx:id="tf3" />
+            <TextField fx:id="tf5" />
+            <TextField fx:id="tf6" />
+            <TextField fx:id="tf7" />
+            <TextField fx:id="tf8" />
+            <TextField fx:id="tf9" />
+            <TextField fx:id="tf10" />
+         </children>
+      </VBox>
+      <Button layoutX="170.0" layoutY="487.0" mnemonicParsing="false" onAction="#modifier" prefHeight="48.0" prefWidth="308.0" style="-fx-background-color: #FFA500;" styleClass="btn-menu" stylesheets="@../../css/MenuButton.css" text="Modifier vos informations" textFill="WHITE" />
+      <VBox layoutX="227.0" layoutY="119.0" prefHeight="339.0" prefWidth="82.0" spacing="20.0">
+         <children>
+            <Label text="Poste" textFill="#fcf9f9">
+               <font>
+                  <Font name="System Bold Italic" size="14.0" />
+               </font></Label>
+            <Label text="Cin" textFill="#fcfcfc">
+               <font>
+                  <Font name="System Bold Italic" size="14.0" />
+               </font></Label>
+            <Label text="Nom" textFill="WHITE">
+               <font>
+                  <Font name="System Bold Italic" size="14.0" />
+               </font></Label>
+            <Label text="Prenom" textFill="WHITE">
+               <font>
+                  <Font name="System Bold Italic" size="14.0" />
+               </font></Label>
+            <Label text="Adresse" textFill="WHITE">
+               <font>
+                  <Font name="System Bold Italic" size="14.0" />
+               </font></Label>
+            <Label text="Email" textFill="WHITE">
+               <font>
+                  <Font name="System Bold Italic" size="14.0" />
+               </font></Label>
+            <Label text="Username" textFill="WHITE">
+               <font>
+                  <Font name="System Bold Italic" size="14.0" />
+               </font></Label>
+            <Label text="Password" textFill="WHITE">
+               <font>
+                  <Font name="System Bold Italic" size="14.0" />
+               </font></Label>
+            <Label text="Type" textFill="WHITE">
+               <font>
+                  <Font name="System Bold Italic" size="14.0" />
+               </font></Label>
+         </children>
+      </VBox>
+      <ImageView fitHeight="160.0" fitWidth="82.0" layoutX="59.0" layoutY="107.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../images/biblioLogo.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="172.0" fitWidth="116.0" layoutX="26.0" layoutY="289.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../images/livreurLogo.png" />
+         </image>
+      </ImageView>
+      <Label layoutX="162.0" layoutY="8.0" text="Personnel" textFill="WHITE">
+         <font>
+            <Font name="System Bold Italic" size="64.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>

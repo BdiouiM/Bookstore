@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import java.net.*?>
+<?import javafx.scene.image.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="627.0" style="-fx-background-color: #ADD8E6;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="bookstore.fx.DesactiverClientController">
+   <children>
+      <VBox layoutX="282.0" layoutY="17.0" prefHeight="282.0" prefWidth="319.0" spacing="15.0">
+         <children>
+            <TextField fx:id="tf1" promptText="Cin" />
+            <TextField fx:id="tf2" promptText="Nom" />
+            <TextField fx:id="tf3" promptText="Prenom" />
+            <TextField fx:id="tf5" promptText="Adresse" />
+            <TextField fx:id="tf6" promptText="Email" />
+            <TextField fx:id="tf7" promptText="Username" />
+            <TextField fx:id="tf8" promptText="Password" />
+            <TextField fx:id="tf9" promptText="Type" />
+         </children>
+      </VBox>
+      <Button layoutX="195.0" layoutY="338.0" mnemonicParsing="false" onAction="#desactiver" prefHeight="48.0" prefWidth="266.0" styleClass="btn-menu" stylesheets="@../../css/MenuButton.css" text="Désativer compte" textFill="WHITE" />
+      <VBox layoutX="189.0" layoutY="17.0" prefHeight="315.0" prefWidth="85.0" spacing="20.0">
+         <children>
+            <Label text="Cin" textFill="WHITE">
+               <font>
+                  <Font name="System Bold Italic" size="14.0" />
+               </font></Label>
+            <Label text="Nom" textFill="WHITE">
+               <font>
+                  <Font name="System Bold Italic" size="14.0" />
+               </font></Label>
+            <Label text="Prenom" textFill="WHITE">
+               <font>
+                  <Font name="System Bold Italic" size="14.0" />
+               </font></Label>
+            <Label text="Adresse" textFill="WHITE">
+               <font>
+                  <Font name="System Bold Italic" size="14.0" />
+               </font></Label>
+            <Label text="Email" textFill="WHITE">
+               <font>
+                  <Font name="System Bold Italic" size="14.0" />
+               </font></Label>
+            <Label text="Username" textFill="WHITE">
+               <font>
+                  <Font name="System Bold Italic" size="14.0" />
+               </font></Label>
+            <Label text="Password" textFill="WHITE">
+               <font>
+                  <Font name="System Bold Italic" size="14.0" />
+               </font></Label>
+            <Label text="Type" textFill="WHITE">
+               <font>
+                  <Font name="System Bold Italic" size="14.0" />
+               </font></Label>
+         </children>
+      </VBox>
+      <ImageView fitHeight="198.0" fitWidth="100.0" layoutX="43.0" layoutY="56.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../images/clientLogo.png" />
+         </image>
+      </ImageView>
+      <Label layoutX="52.0" layoutY="251.0" text="Client" textFill="WHITE">
+         <font>
+            <Font name="System Bold Italic" size="24.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>
